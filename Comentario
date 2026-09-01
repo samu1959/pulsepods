@@ -1,0 +1,12 @@
+Comandos GIT 
+
+1. git status
+2. git add .
+3. git commit - "FAVORITOS : ADD STYLE"
+4. git push
+5. git switch master
+6. git merge branch_samuel_dev
+7. git pull
+9. git push
+10. git switch branch_samuel_dev
+11. git merge master
