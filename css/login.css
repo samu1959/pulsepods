@@ -1,7 +1,7 @@
 h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 2rem;
-    color: black;
+    color: #F5A623;
 }
 
 .container {
@@ -9,11 +9,26 @@ h1 {
 }
 
 html{
-    background-color:#333333;
+    background-color:#303030;
     height: 100%;
 }   
 
-form{
+.box{
     background-color: black;
-    border: 2px solid #D4AF37 ;
+    border: 2px solid #F5A623 ;
 }
+
+.input{
+    background-color: transparent;
+    border: 2px solid #F5A623 ;
+}
+
+.label{
+    color:#F5A623
+}
+
+.button{
+    background-color: #F5A623;
+    color:black;
+}
+
