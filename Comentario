@@ -1,12 +1,10 @@
-Comandos GIT 
-
-1. git status
-2. git add .
-3. git commit - "FAVORITOS : ADD STYLE"
-4. git push
-5. git switch master
-6. git merge branch_samuel_dev
-7. git pull
-9. git push
-10. git switch branch_samuel_dev
-11. git merge master
+git status /*Verificar el estado de los archivos modificados*/
+git add .  /*Agregar los archivos al commit*/
+git commit -m "Archivo_Modificado : Accion que se realizo" /*Comentario de las modificaciones realizadas*/
+git push origin su_nombre /*Subir los cambios realizado del entorno local al entorno de la nube*/
+git switch main o master /*Cambiarse a la rama principal*/
+git merge su_nombre /*Combinar los cambios realizados en su rama con la version original del proyecto*/
+git pull origin main o master /*Obtener los cambios realidos que faltan por actualizar*/
+git push origin main o master /*Subir los cambios cobinados de las dos ramas*/
+git switch su_nombre  /*Cambiarse a su Rama*/
+git merge main o master /*Fusionar cambios de la rama principal con la rama de ustedes*/
