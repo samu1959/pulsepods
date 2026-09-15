@@ -1,368 +1,210 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="registro.css">
 
-  <title>registrarse</title>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PulsePods - Registro</title>
+
+    <link rel="stylesheet" href="registro.css">
+
 </head>
 
+
 <body>
-  <div class="tabs is-fullwidth">
-
-    
-      <a>
-        <span class="icon"><i class="fas fa-angle-left" aria-hidden="true"></i></span>
-        <center span>REGISTRARSE </span center>
-      </a>
 
 
-      <a>
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label">PULSEPODS</label>
+   
 
-          <div> </div>
+    <div class="registro">
 
-        <label for="fecha">Fecha de nacimiento:</label>
-        <input type="date" id="fecha" name="fecha" required>
+
+
+        <div class="logo">
+            PULSEPODS
+        </div>
+
+
+        <div class="linea"></div>
+
 
       
 
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <p class="control is-expanded has-icons-left">
-                <input class="input" type="text" placeholder="nombre">
-                <span class="icon is-small is-left">
-                  <i class="fas fa-user"></i>
-                </span>
-              </p>
+        <h1>
+            Crear cuenta
+        </h1>
+
+
+        <p class="subtitulo">
+            Regístrate para realizar tus pedidos
+        </p>
+
+
+      
+
+        <form>
+
+
+        
+
+            <div class="campo">
+
+                <label for="nombre">
+                    Nombre completo
+                </label>
+
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="Ej: Samuel Palacios"
+                    required
+                >
+
             </div>
-            <div class="field">
-              <p class="control is-expanded has-icons-left has-icons-right">
-                <input class="input is-success" type="email" placeholder="Email" value="">
-                <span class="icon is-small is-left">
-                  <i class="fas fa-envelope"></i>
-                </span>
-                <span class="icon is-small is-right">
-                  <i class="fas fa-check"></i>
-                </span>
-              </p>
+
+
+          
+            <div class="campo">
+
+                <label for="correo">
+                    Correo electrónico
+                </label>
+
+                <input
+                    type="email"
+                    id="correo"
+                    name="correo"
+                    placeholder="Ej: correo@gmail.com"
+                    required
+                >
+
             </div>
-          </div>
+
+
+
+            <div class="campo">
+
+                <label for="telefono">
+                    Teléfono
+                </label>
+
+                <input
+                    type="tel"
+                    id="telefono"
+                    name="telefono"
+                    placeholder="Ej: 300 123 4567"
+                    required
+                >
+
+            </div>
+
+
+        
+
+            <div class="campo">
+
+                <label for="password">
+                    Contraseña
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Crea una contraseña"
+                    required
+                >
+
+            </div>
+
+
+
+            <div class="campo">
+
+                <label for="confirmar">
+                    Confirmar contraseña
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmar"
+                    name="confirmar"
+                    placeholder="Repite tu contraseña"
+                    required
+                >
+
+            </div>
+
+
+           
+
+            <div class="terminos">
+
+                <input
+                    type="checkbox"
+                    id="terminos"
+                    required
+                >
+
+                <label for="terminos">
+
+                    Acepto los términos y condiciones
+                    de PulsePods.
+
+                </label>
+
+            </div>
+
+
+          
+
+            <button
+                type="subir"
+                class="boton"
+            >
+
+                Crear cuenta
+
+            </button>
+
+
+        </form>
+
+
+       
+
+        <div class="login">
+
+            <p>
+                ¿Ya tienes una cuenta?
+            </p>
+
+            <a href="login.html">
+                Iniciar sesión
+            </a>
+
         </div>
 
-        <div class="field is-horizontal">
-          <div class="field-label"></div>
-          <div class="field-body">
-            <div class="field is-expanded">
-              <div class="field has-addons">
-                <p class="control">
-                  <a class="button is-static">
 
-                  </a>
-                </p>
-                <p class="control is-expanded">
-                  <input class="input" type="tel" placeholder="telefono">
-                </p>
-              </div>
-              <p class="help"></p>
-            </div>
-          </div>
-        </div>
+        
 
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label">Departamento</label>
-          </div>
-          <div class="field-body">
-            <div class="field is-narrow">
-              <div class="control">
-                <div class="select is-fullwidth">
-                  <select>
-                    <option value="">Seleccione un departamento</option>
-                    <option value="amazonas">Amazonas</option>
-                    <option value="antioquia">Antioquia</option>
-                    <option value="arauca">Arauca</option>
-                    <option value="atlantico">Atlántico</option>
-                    <option value="bolivar">Bolívar</option>
-                    <option value="boyaca">Boyacá</option>
-                    <option value="caldas">Caldas</option>
-                    <option value="caqueta">Caquetá</option>
-                    <option value="caribe">Casanare</option>
-                    <option value="cauca">Cauca</option>
-                    <option value="cesar">Cesar</option>
-                    <option value="choco">Chocó</option>
-                    <option value="cordoba">Córdoba</option>
-                    <option value="cundinamarca">Cundinamarca</option>
-                    <option value="guainia">Guainía</option>
-                    <option value="guaviare">Guaviare</option>
-                    <option value="huila">Huila</option>
-                    <option value="la_guajira">La Guajira</option>
-                    <option value="magdalena">Magdalena</option>
-                    <option value="meta">Meta</option>
-                    <option value="narino">Nariño</option>
-                    <option value="norte_de_santander">Norte de Santander</option>
-                    <option value="putumayo">Putumayo</option>
-                    <option value="quindio">Quindío</option>
-                    <option value="risaralda">Risaralda</option>
-                    <option value="santander">Santander</option>
-                    <option value="sucre">Sucre</option>
-                    <option value="tolima">Tolima</option>
-                    <option value="valle_del_cauca">Valle del Cauca</option>
-                    <option value="vaupes">Vaupés</option>
-                    <option value="vichada">Vichada</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <a
+            href="index.html"
+            class="volver"
+        >
 
+             Volver al inicio
 
+        </a>
 
-<div class="field is-horizontal">
-
-    <div class="field-label is-normal">
-        <label class="label">Ciudad</label>
-    </div>
-
-    <div class="field-body">
-
-        <div class="field is-narrow">
-
-            <div class="control">
-
-                <div class="select is-fullwidth">
-
-                    <select>
-
-                        <option value="">Seleccione una ciudad</option>
-
-                        <!-- Amazonas -->
-                        <option value="leticia">Leticia</option>
-
-                        <!-- Antioquia -->
-                        <option value="medellin">Medellín</option>
-                        <option value="bello">Bello</option>
-                        <option value="itagui">Itagüí</option>
-                        <option value="envigado">Envigado</option>
-                        <option value="apartado">Apartadó</option>
-                        <option value="rionegro">Rionegro</option>
-
-                        <!-- Arauca -->
-                        <option value="arauca">Arauca</option>
-                        <option value="arauquita">Arauquita</option>
-                        <option value="saravena">Saravena</option>
-
-                        <!-- Atlántico -->
-                        <option value="barranquilla">Barranquilla</option>
-                        <option value="soledad">Soledad</option>
-                        <option value="malambo">Malambo</option>
-                        <option value="sabanalarga">Sabanalarga</option>
-
-                        <!-- Bolívar -->
-                        <option value="cartagena">Cartagena</option>
-                        <option value="magangue">Magangué</option>
-                        <option value="turbaco">Turbaco</option>
-
-                        <!-- Boyacá -->
-                        <option value="tunja">Tunja</option>
-                        <option value="duitama">Duitama</option>
-                        <option value="sogamoso">Sogamoso</option>
-                        <option value="chiquinquira">Chiquinquirá</option>
-
-                        <!-- Caldas -->
-                        <option value="manizales">Manizales</option>
-                        <option value="la_dorada">La Dorada</option>
-                        <option value="villamaria">Villamaría</option>
-                        <option value="chinchina">Chinchiná</option>
-                        <option value="neira">Neira</option>
-
-                        <!-- Caquetá -->
-                        <option value="florencia">Florencia</option>
-                        <option value="san_vicente">San Vicente del Caguán</option>
-
-                        <!-- Casanare -->
-                        <option value="yopal">Yopal</option>
-                        <option value="aguazul">Aguazul</option>
-                        <option value="villanueva">Villanueva</option>
-
-                        <!-- Cauca -->
-                        <option value="popayan">Popayán</option>
-                        <option value="santander_de_quilichao">Santander de Quilichao</option>
-                        <option value="puerto_tejada">Puerto Tejada</option>
-
-                        <!-- Cesar -->
-                        <option value="valledupar">Valledupar</option>
-                        <option value="aguachica">Aguachica</option>
-                        <option value="bosconia">Bosconia</option>
-
-                        <!-- Chocó -->
-                        <option value="quibdo">Quibdó</option>
-                        <option value="istmina">Istmina</option>
-                        <option value="condoto">Condoto</option>
-
-                        <!-- Córdoba -->
-                        <option value="monteria">Montería</option>
-                        <option value="sahagun">Sahagún</option>
-                        <option value="lorica">Lorica</option>
-                        <option value="cerete">Cereté</option>
-
-                        <!-- Cundinamarca -->
-                        <option value="bogota">Bogotá D.C.</option>
-                        <option value="soacha">Soacha</option>
-                        <option value="chia">Chía</option>
-                        <option value="zipaquira">Zipaquirá</option>
-                        <option value="facatativa">Facatativá</option>
-                        <option value="fusagasuga">Fusagasugá</option>
-
-                        <!-- Guaviare -->
-                        <option value="san_jose_del_guaviare">San José del Guaviare</option>
-
-                        <!-- Huila -->
-                        <option value="neiva">Neiva</option>
-                        <option value="pitalito">Pitalito</option>
-                        <option value="garzon">Garzón</option>
-
-                        <!-- La Guajira -->
-                        <option value="riohacha">Riohacha</option>
-                        <option value="maicao">Maicao</option>
-                        <option value="uribia">Uribia</option>
-
-                        <!-- Magdalena -->
-                        <option value="santa_marta">Santa Marta</option>
-                        <option value="ciénaga">Ciénaga</option>
-                        <option value="fundacion">Fundación</option>
-
-                        <!-- Meta -->
-                        <option value="villavicencio">Villavicencio</option>
-                        <option value="acacias">Acacías</option>
-                        <option value="granada">Granada</option>
-
-                        <!-- Nariño -->
-                        <option value="pasto">Pasto</option>
-                        <option value="tumaco">Tumaco</option>
-                        <option value="ipiales">Ipiales</option>
-
-                        <!-- Norte de Santander -->
-                        <option value="cucuta">Cúcuta</option>
-                        <option value="ocana">Ocaña</option>
-                        <option value="pamplona">Pamplona</option>
-
-                        <!-- Putumayo -->
-                        <option value="mocoa">Mocoa</option>
-                        <option value="puerto_asis">Puerto Asís</option>
-
-                        <!-- Quindío -->
-                        <option value="armenia">Armenia</option>
-                        <option value="calarca">Calarcá</option>
-                        <option value="montenegro">Montenegro</option>
-
-                        <!-- Risaralda -->
-                        <option value="pereira">Pereira</option>
-                        <option value="dosquebradas">Dosquebradas</option>
-                        <option value="santa_rosa_de_cabal">Santa Rosa de Cabal</option>
-
-                        <!-- Santander -->
-                        <option value="bucaramanga">Bucaramanga</option>
-                        <option value="floridablanca">Floridablanca</option>
-                        <option value="giron">Girón</option>
-                        <option value="barrancabermeja">Barrancabermeja</option>
-
-                        <!-- Sucre -->
-                        <option value="sincelejo">Sincelejo</option>
-                        <option value="corozal">Corozal</option>
-
-                        <!-- Tolima -->
-                        <option value="ibague">Ibagué</option>
-                        <option value="espinal">El Espinal</option>
-                        <option value="melgar">Melgar</option>
-
-                        <!-- Valle del Cauca -->
-                        <option value="cali">Cali</option>
-                        <option value="buenaventura">Buenaventura</option>
-                        <option value="palmira">Palmira</option>
-                        <option value="tulua">Tuluá</option>
-                        <option value="buga">Buga</option>
-                        <option value="cartago">Cartago</option>
-
-                        <!-- Vaupés -->
-                        <option value="mitu">Mitú</option>
-
-                        <!-- Vichada -->
-                        <option value="puerto_carreno">Puerto Carreño</option>
-
-                    </select>
-
-                </div>
-
-            </div>
-
-        </div>
 
     </div>
 
-</div>
 
-
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label">tipo de documento</label>
-          </div>
-          <div class="field-body">
-            <div class="field is-narrow">
-              <div class="control">
-                <div class="select is-fullwidth">
-                  <select>
-                    <option value="">cedula de ciudadania</option>
-                    <option value="amazonas">cedula de extranjeria </option>
-                    <option value="antioquia">trajeta de identidad </option>
-                    <option value="arauca">otro</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label">numero de documento </label>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control">
-                <input class="input is-danger" type="text" placeholder="1053836728">
-              </div>
-              <p class="help is-danger">
-              </p>
-            </div>
-          </div>
-        </div>
-
-
-
-        <div class="field is-horizontal">
-          <div class="field-label">
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control">
-                <button class="button is-primary">
-                  registrar
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a href="login.html" type="buttom">¿ya tienes una cuenta?</a>
-        <span class="icon"><i class="fas fa-angle-right" aria-hidden="true"></i></span>
-      </a>
-  
-  </div>
 </body>
 
 </html>
