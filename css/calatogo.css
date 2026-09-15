@@ -1,4 +1,19 @@
 h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 2rem;
+    color: #F5A623;
+}
+
+html{
+    background-color: #303030;
+}
+
+.card-content{
+    background-color: black;
+    color:#F5A623;
+    border: 2px solid #F5A623 ;
+}
+
+.image{
+    border: 2px solid #F5A623 ;
 }
