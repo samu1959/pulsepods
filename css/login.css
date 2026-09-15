@@ -1,8 +1,19 @@
 h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 2rem;
+    color: black;
 }
 
 .container {
     width: 30%;
+}
+
+html{
+    background-color:#333333;
+    height: 100%;
+}   
+
+form{
+    background-color: black;
+    border: 2px solid #D4AF37 ;
 }

@@ -10,36 +10,41 @@
 </head>
 
 <body>
+<br><br><br>
+    <center>
+        <h1>Iniciar Sesion</h1>
+    </center>
+
+
     <div class="container">
         <br><br>
-        <center>
-            <h1 >Iniciar Sesion</h1>
-        </center>
-        <br><br>
-        <div class="field">
-            <label class="label">Email</label>
-            <div class="control">
-                <input id="email" class="input is-rounded" type="email" placeholder="Email" required />
+        <form class="box">
+            <div class="field">
+                <label class="label">Nombre</label>
+                <div class="control">
+                    <input class="input is-rounded" type="text" placeholder="ingrese su nombre" />
+                </div>
             </div>
-        </div>
-        <div class="field">
-            <label class="label">Nombre</label>
-            <div class="control">
-                <input id="nombre" class="input is-rounded" type="text" placeholder="Nombre De Usuario" required />
+
+        <form class="box">
+            <div class="field">
+                <label class="label">Email</label>
+                <div class="control">
+                    <input class="input is-rounded" type="email" placeholder="ingrese su email" />
+                </div>
             </div>
-        </div>
-        <div class="field">
-            <label class="label">Contraseña</label>
-            <div class="control">
-                <input id="contrasena" class="input is-rounded" type="text" placeholder="Contraseña" required />
+
+            <div class="field">
+                <label class="label">Contraseña</label>
+                <div class="control">
+                    <input class="input is-rounded" type="password" placeholder="Contraseña" />
+                </div>
             </div>
-        </div>
-        <br><br>
+
+            <button class="button is-primary">Iniciar Sesion</button>
+        </form>
     </div>
-    <div class="buttons is-flex is-justify-content-center">
-        <a type="button" class="button is-danger" href="../index.html">Home</a>
-        <button class="button is-info is-dark" id="btnGuardar">Guardar</button>
-    </div>
+
 </body>
 
 </html>
