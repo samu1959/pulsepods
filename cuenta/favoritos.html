@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../css/favoritos.css">
+
+    <title>PulsePods - Favoritos</title>
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="container">
+
+            <div class="navbar-brand">
+
+                <a class="navbar-item logo" href="index.html">
+                    PULSEPODS
+                </a>
+
+                <a
+                    role="button"
+                    class="navbar-burger"
+                    id="burger"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+
+            </div>
+
+            <div class="navbar-menu" id="menu">
+
+                <div class="navbar-end">
+
+                    <a class="navbar-item" href="../inicio/index.html">
+                        Inicio
+                    </a>
+
+                    <a class="navbar-item" href="../catalogo/catalogo.html">
+                        Catálogo
+                    </a>
+
+                    <a class="navbar-item activo" href="favoritos.html">
+                        Favoritos
+                    </a>
+                    <a class="navbar-item" href="../cuenta/mispedidos.html">
+                        Mis Pedidos
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="has-text-centered mb-6">
+
+                <h1 class="title is-1">
+                    Mis favoritos
+                </h1>
+
+                <p class="subtitle">
+                    Productos que has guardado
+                </p>
+
+            </div>
+
+
+            <div
+                id="favoritos"
+                class="columns is-multiline"
+            >
+            </div>
+
+
+            <div
+                id="vacio"
+                class="has-text-centered"
+            >
+
+                <h2 class="title is-3">
+                    No tienes favoritos
+                </h2>
+
+                <p>
+                    Agrega productos a favoritos desde nuestro catálogo.
+                </p>
+
+                <a
+                    href="../catalogo/catalogo.html"
+                    class="button mt-5"
+                >
+                    Ir al catálogo
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+</body>
+
+</html>
