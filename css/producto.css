@@ -1,0 +1,184 @@
+html,
+body {
+    min-height: 100%;
+    background-color: #303030;
+}
+
+body {
+    min-height: 100vh;
+}
+
+h1,
+.title {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #F5A623;
+}
+
+h2,
+h3,
+p,
+.label,
+.navbar-item,
+.content,
+.notification,
+a,
+.button {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: black;
+    border-bottom: 2px solid #F5A623;
+}
+
+.navbar-item {
+    color: #F5A623;
+}
+
+.navbar-item:hover {
+    background-color: #F5A623;
+    color: black;
+}
+
+.navbar-burger {
+    color: #F5A623;
+}
+
+.section {
+    min-height: calc(100vh - 52px);
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.card {
+    background-color: black;
+    border: 2px solid #F5A623;
+    border-radius: 14px;
+    box-shadow: none;
+}
+
+.card-content {
+    background-color: transparent;
+}
+
+.model-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.model-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: 0;
+}
+
+.title {
+    color: #F5A623 !important;
+}
+
+.subtitle {
+    color: #F5A623 !important;
+}
+
+.content {
+    color: white;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.label {
+    color: #F5A623 !important;
+}
+
+.notification {
+    background-color: transparent;
+    border: 2px solid #F5A623;
+    color: white;
+}
+
+.notification strong {
+    color: #F5A623;
+}
+
+.button {
+    background-color: #F5A623;
+    color: black;
+    border: 2px solid #F5A623;
+}
+
+.button:hover {
+    background-color: black;
+    color: #F5A623;
+    border-color: #F5A623;
+}
+
+.field.has-addons .button {
+    background-color: #F5A623;
+    color: black;
+    border-color: #F5A623;
+}
+
+.field.has-addons .button:hover {
+    background-color: black;
+    color: #F5A623;
+}
+
+.cantidad-control {
+    width: 255px;
+}
+
+.cantidad-input {
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    color: white;
+    border: 2px solid #F5A623;
+}
+
+.cantidad-input:focus {
+    border-color: #F5A623;
+    box-shadow: none;
+}
+
+.select,
+.select select {
+    width: 100%;
+}
+
+a {
+    color: #F5A623;
+}
+
+a:hover {
+    color: white;
+}
+
+.content ul {
+    color: white;
+}
+
+.content li::marker {
+    color: #F5A623;
+}
+
+@media screen and (max-width: 768px) {
+
+    .section {
+        padding: 1.5rem;
+    }
+
+    .model-container {
+        height: 400px;
+    }
+
+    .cantidad-control {
+        width: 180px;
+    }
+
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../css/mispedidos.css">
+
+    <title>PulsePods - Mis pedidos</title>
+</head>
+
+<body>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+
+        <div class="container">
+
+            <div class="navbar-brand">
+
+                <a class="navbar-item logo" href="../inicio/index.html">
+                    PULSEPODS
+                </a>
+
+                <a
+                    role="button"
+                    class="navbar-burger"
+                    id="burger"
+                    aria-label="menu"
+                    aria-expanded="false"
+                >
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+
+            </div>
+
+            <div class="navbar-menu" id="menu">
+
+                <div class="navbar-end">
+
+                    <a class="navbar-item" href="../inicio/index.html">
+                        Inicio
+                    </a>
+
+                    <a class="navbar-item" href="catalogo.html">
+                        Catálogo
+                    </a>
+
+                    <a class="navbar-item" href="../cuenta/favoritos.html">
+                        Favoritos
+                    </a>
+
+                    <a class="navbar-item activo" href="mispedidos.html">
+                        Mis pedidos
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="has-text-centered mb-6">
+
+                <h1 class="title is-1">
+                    Mis pedidos
+                </h1>
+
+                <p class="subtitle">
+                    Productos que has agregado a tu pedido
+                </p>
+
+            </div>
+
+
+            <div class="columns is-variable is-6">
+
+                <div class="column is-8">
+
+                    <div id="pedidos">
+                    </div>
+
+                    <div
+                        id="vacio"
+                        class="has-text-centered"
+                    >
+
+                        <h2 class="title is-3">
+                            No tienes pedidos
+                        </h2>
+
+                        <p>
+                            Agrega productos desde nuestro catálogo.
+                        </p>
+
+                        <a
+                            href="../catalogo/catalogo.html"
+                            class="button mt-5"
+                        >
+                            Ir al catálogo
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="column is-4">
+
+                    <div class="card resumen">
+
+                        <div class="card-content">
+
+                            <h2 class="title is-4">
+                                Resumen del pedido
+                            </h2>
+
+                            <div class="resumen-linea">
+                                <span>Productos</span>
+                                <span id="totalProductos">0</span>
+                            </div>
+
+                            <div class="resumen-linea">
+                                <span>Total</span>
+                                <span id="totalPedido">$0</span>
+                            </div>
+
+                            <button
+                                id="finalizar"
+                                class="button is-fullwidth mt-5"
+                                onclick="finalizarPedido()"
+                            >
+                                Finalizar pedido
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+</body>
+
+</html>

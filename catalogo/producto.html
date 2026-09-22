@@ -1,175 +1,269 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>PulsePods - AirPods Pro 3</title>
-
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../css/producto.css">
+    <title>PulsePods</title>
 </head>
-
 
 <body>
 
-    <center>
-        <header>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
 
-            <div class="logo">
-                PULSEPODS
+        <div class="container">
+
+            <div class="navbar-brand">
+
+                <a class="navbar-item" href="../inicio/index.html">
+                    <strong class="is-size-4">
+                        PULSEPODS
+                    </strong>
+                </a>
+
+                <a
+                    role="button"
+                    class="navbar-burger"
+                    aria-label="menu"
+                    aria-expanded="false"
+                    data-target="menuPrincipal"
+                >
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+
             </div>
 
-            <nav>
+            <div id="menuPrincipal" class="navbar-menu">
 
-                <a href="index.html">
-                    Inicio
-                </a>
+                <div class="navbar-end">
 
-                <a href="catalogo.html">
-                    Catálogo
-                </a>
+                    <a class="navbar-item" href="../inicio/index.html">
+                        Inicio
+                    </a>
+
+                    <a class="navbar-item" href="catalogo.html">
+                        Catálogo
+                    </a>
+
+                    <a class="navbar-item" href="../cuenta/favoritos.html">
+                        Favoritos
+                    </a>
+
+                    <a class="navbar-item" href="../cuenta/mispedidos.html">
+                        Mis Pedidos
+                    </a>
+                  
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
 
 
+    <section class="section">
 
-        </header>
+        <div class="container">
+
+            <div class="columns is-vcentered is-variable is-8">
+
+                <div class="column is-7">
+
+                    <div class="card">
+
+                        <div class="card-content">
+
+                            <div class="model-container">
+
+                                <iframe
+                                    title="AirPods Pro 3"
+                                    frameborder="0"
+                                    allowfullscreen
+                                    mozallowfullscreen="true"
+                                    webkitallowfullscreen="true"
+                                    allow="autoplay; fullscreen; xr-spatial-tracking"
+                                    xr-spatial-tracking
+                                    execution-while-out-of-viewport
+                                    execution-while-not-rendered
+                                    web-share
+                                    src="https://sketchfab.com/models/2209c17723a54331985cc080eda35266/embed">
+                                </iframe>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
 
+                <div class="column is-5">
 
+                    <div class="card">
 
-        <main class="contenedor">
-            <div class="imagen">
+                        <div class="card-content">
 
+                            <p class="is-size-7 has-text-weight-bold mb-2">
+                                AUDÍFONOS
+                            </p>
 
-                <div class="visor">
+                            <h1 class="title is-2 mb-3">
+                                AirPods Pro 3
+                            </h1>
 
-                    <iframe title="AirPods Pro 3" frameborder="0" allowfullscreen mozallowfullscreen="true"
-                        webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking"
-                        xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share
-                        src="https://sketchfab.com/models/2209c17723a54331985cc080eda35266/embed">
-                    </iframe>
+                            <p class="title is-3 mb-5">
+                                $84.900
+                            </p>
+
+                            <div class="content">
+
+                                <p>
+                                    Disfruta de tu música con los AirPods Pro 3.
+                                    Diseño inalámbrico, conexión Bluetooth,
+                                    estuche de carga y excelente calidad de sonido.
+                                </p>
+
+                            </div>
+
+                            <div class="notification is-light mb-5">
+
+                                <strong>
+                                    Disponibilidad:
+                                </strong>
+
+                                <span id="stock">
+                                    15 unidades
+                                </span>
+
+                            </div>
+
+                            <div class="field">
+
+                                <label class="label">
+                                    Cantidad
+                                </label>
+
+                                <div class="field has-addons">
+
+                                    <div class="control">
+
+                                        <button
+                                            class="button"
+                                            type="button"
+                                            onclick="restar()">
+                                            −
+                                        </button>
+
+                                    </div>
+
+                                    <div class="control">
+
+                                        <input
+                                            id="numero"
+                                            class="input cantidad-input"
+                                            type="text"
+                                            value="1"
+                                            readonly>
+
+                                    </div>
+
+                                    <div class="control">
+
+                                        <button
+                                            class="button"
+                                            type="button"
+                                            onclick="sumar()">
+                                            +
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="field mt-5">
+
+                                <div class="control">
+
+                                    <button
+                                        class="button is-primary is-medium is-fullwidth"
+                                        type="button"
+                                        onclick="pedir()">
+
+                                        Agregar pedido
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
             </div>
 
 
+            <div class="columns mt-6">
 
+                <div class="column">
 
-            <div class="informacion">
-                <h1>
-                    AirPods Pro 3
-                </h1>
+                    <div class="card">
 
+                        <div class="card-content">
 
+                            <h2 class="title is-4">
+                                Características del producto
+                            </h2>
 
+                            <div class="content">
 
-                <p class="categoria">
-                    Audífonos
-                </p>
+                                <ul>
+                                    <li>Conexión Bluetooth</li>
+                                    <li>Estuche de carga</li>
+                                    <li>Diseño inalámbrico</li>
+                                    <li>Micrófono integrado</li>
+                                    <li>Control táctil</li>
+                                </ul>
 
+                            </div>
 
+                        </div>
 
-
-                <p class="precio">
-                    $84.900
-                </p>
-
-
-                <p class="descripcion">
-
-                    Disfruta de tu música con los AirPods Pro 3.
-                    Diseño inalámbrico, conexión Bluetooth,
-                    estuche de carga y excelente calidad de sonido.
-
-                </p>
-
-
-
-                <p class="stock">
-
-                    <strong>Disponibilidad:</strong>
-
-                    <span id="stock">
-                        15 unidades
-                    </span>
-
-                </p>
-
-
-                <div class="cantidad">
-
-                    <strong>Cantidad:</strong>
-
-                    <button onclick="restar()">
-                        -
-                    </button>
-
-                    <span id="numero">
-                        1
-                    </span>
-
-                    <button onclick="sumar()">
-                        +
-                    </button>
+                    </div>
 
                 </div>
 
-
-
-
-                <button class="boton" onclick="pedir()">
-
-                    Agregar pedido
-
-                </button>
-
-
-
-
             </div>
 
-        </main>
+        </div>
+
+    </section>
 
 
+    <script>
 
+        const burger = document.querySelector(".navbar-burger");
+        const menu = document.querySelector("#menuPrincipal");
 
-        <section class="caracteristicas">
+        burger.addEventListener("click", () => {
+            burger.classList.toggle("is-active");
+            menu.classList.toggle("is-active");
+        });
 
-            <h2>
-                Características del producto
-            </h2>
-
-            <p>
-                ✓ Conexión Bluetooth
-            </p>
-
-            <p>
-                ✓ Estuche de carga
-            </p>
-
-            <p>
-                ✓ Diseño inalámbrico
-            </p>
-
-            <p>
-                ✓ Micrófono integrado
-            </p>
-
-            <p>
-                ✓ Control táctil
-            </p>
-
-        </section>
-
-
-
-
-    </center>
+    </script>
 
 </body>
-</html>
 
+</html>

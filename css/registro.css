@@ -4,16 +4,30 @@ h1 {
     color: #F5A623;
 }
 
+.container {
+    width: 80%;
+}s
+
 html{
-    background-color: #303030;
-}
+    background-color:#303030;
+    height: 100%;
+}   
 
-.card-content{
+.box{
     background-color: black;
-    color:#F5A623;
     border: 2px solid #F5A623 ;
 }
 
-.image{
+.input{
+    background-color: transparent;
     border: 2px solid #F5A623 ;
+}
+
+.label{
+    color:#F5A623
+}
+
+.button{
+    background-color: #F5A623;
+    color:black;
 }
