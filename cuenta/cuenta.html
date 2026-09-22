@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi cuenta - PulsePods</title>
+
+    <link rel="stylesheet" href="cuenta.css">
+</head>
+
+<body>
+
+    <header class="barra-superior">
+
+        <div class="logo">
+            PulsePods
+        </div>
+
+        <button class="boton-menu" onclick="mostrarMenu()">
+            
+        </button>
+
+    </header>
+
+
+    <div class="contenedor">
+
+  
+        <aside class="menu-lateral" id="menuLateral">
+
+            <div class="perfil-menu">
+
+                <div class="foto-perfil">
+                    <span id="inicialUsuario">U</span>
+                </div>
+
+                <div>
+                    <strong id="nombreMenu">Usuario</strong>
+                    <h2 id="correoMenu">correo@email.com</h2>
+                </div>
+
+            </div>
+
+
+            <nav>
+
+                <button onclick="mostrarSeccion('perfil')">
+                    👤 Mi perfil
+                </button>
+
+                <button onclick="mostrarSeccion('favoritos')">
+                    ❤️ Mis favoritos
+                </button>
+
+                <button onclick="mostrarSeccion('pedidos')">
+                    📦 Mis pedidos
+                </button>
+
+                <button onclick="mostrarSeccion('ajustes')">
+                    ⚙️ Ajustes
+                </button>
+
+            </nav>
+
+
+            <button class="cerrar-sesion" onclick="cerrarSesion()">
+                🚪 Cerrar sesión
+            </button>
+
+        </aside>
+
+
+      
+        <main class="contenido">
+
+
+           
+            <section id="perfil" class="seccion activa">
+
+                <div class="titulo-seccion">
+
+                    <div>
+                        <h1>Mi perfil</h1>
+                        <p>Administra la información de tu cuenta.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="tarjeta perfil-principal">
+
+                    <div class="foto-grande">
+                        <span id="inicialPerfil">U</span>
+                    </div>
+
+                    <div>
+
+                        <h2 id="nombrePerfil">
+                            Usuario
+                        </h2>
+
+                        <p id="correoPerfil">
+                            correo@email.com
+                        </p>
+
+                        <span class="estado">
+                            ● Cuenta activa
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="tarjeta">
+
+                    <h2>Información personal</h2>
+
+                    <div class="formulario">
+
+                        <div class="campo">
+
+                            <label>
+                                Nombre
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nombreInput"
+                                placeholder="Tu nombre">
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label>
+                                Correo electrónico
+                            </label>
+
+                            <input
+                                type="email"
+                                id="correoInput"
+                                placeholder="Tu correo">
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="boton-principal"
+                        onclick="guardarPerfil()">
+
+                        Guardar cambios
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            
+            <section id="favoritos" class="seccion">
+
+                <div class="titulo-seccion">
+
+                    <div>
+
+                        <h1></h1>
+
+                        <p>
+                           
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="listaFavoritos"
+                    class="productos">
+
+                </div>
+
