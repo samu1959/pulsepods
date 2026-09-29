@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <title>PulsePods - Administrar pedidos</title>
+</head>
+
+<body>
+
+<nav class="navbar" role="navigation">
+
+    <div class="container">
+
+        <div class="navbar-brand">
+
+            <a class="navbar-item logo" href="../inicio/index.html">
+                PULSEPODS
+            </a>
+
+            <a
+                role="button"
+                class="navbar-burger"
+                id="burger"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+
+        </div>
+
+        <div class="navbar-menu" id="menu">
+
+            <div class="navbar-end">
+
+                <a class="navbar-item" href="cuentaAdmin.html">
+                    Panel
+                </a>
+
+                <a class="navbar-item" href="productos.html">
+                    Productos
+                </a>
+
+                <a class="navbar-item" href="agregar-producto.html">
+                    Agregar producto
+                </a>
+
+                <a class="navbar-item activo" href="pedidos.html">
+                    Pedidos
+                </a>
+
+                <a class="navbar-item" href="../inicio/index.html">
+                    Ver tienda
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="mb-6">
+
+            <h1 class="title is-1">
+                Pedidos
+            </h1>
+
+            <p class="subtitulo">
+                Consulta los pedidos realizados en PulsePods
+            </p>
+
+        </div>
+
+
+        <div
+            id="sinPedidos"
+            class="box panel has-text-centered"
+        >
+
+            <h2 class="title is-3">
+                No hay pedidos
+            </h2>
+
+            <p class="subtitulo">
+                Los pedidos de los clientes aparecerán aquí.
+            </p>
+
+        </div>
+
+
+        <div id="listaPedidos"></div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+const burger = document.getElementById("burger");
+const menu = document.getElementById("menu");
+
+burger.addEventListener("click", () => {
+    burger.classList.toggle("is-active");
+    menu.classList.toggle("is-active");
+});
+
+const listaPedidos =
+    document.getElementById("listaPedidos");
+
+const sinPedidos =
+    document.getElementById("sinPedidos");
+
+const pedidos =
+    JSON.parse(localStorage.getItem("pedidos")) || [];
+
+
+function mostrarPedidos() {
+
+    listaPedidos.innerHTML = "";
+
+    if (pedidos.length === 0) {
+        sinPedidos.style.display = "block";
+        return;
+    }
+
+    sinPedidos.style.display = "none";
+
+    pedidos.forEach((pedido, indice) => {
+
+        const cantidad = pedido.cantidad || 1;
+
+        const precio = Number(
+            pedido.precio.toString().replace(/\./g, "")
+        );
+
+        const total =
+            precio * cantidad;
+
+        const elemento =
+            document.createElement("div");
+
+        elemento.className =
+            "box panel mb-5";
+
+        elemento.innerHTML = `
+
+            <div class="columns is-vcentered">
+
+                <div class="column">
+
+                    <h2 class="title is-3">
+                        Pedido #${indice + 1}
+                    </h2>
+
+                    <p class="subtitulo">
+                        Producto: ${pedido.nombre}
+                    </p>
+
+                    <p class="subtitulo">
+                        Cantidad: ${cantidad}
+                    </p>
+
+                    <p class="subtitulo">
+                        Total:
+                        $${total.toLocaleString("es-CO")}
+                    </p>
+
+                </div>
+
+                <div class="column is-3">
+
+                    <div class="select is-fullwidth">
+
+                        <select>
+
+                            <option>
+                                Pendiente
+                            </option>
+
+                            <option>
+                                Preparando
+                            </option>
+
+                            <option>
+                                Enviado
+                            </option>
+
+                            <option>
+                                Entregado
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+        `;
+
+        listaPedidos.appendChild(elemento);
+
+    });
+
+}
+
+
+mostrarPedidos();
+
+</script>
+
+</body>
+</html>

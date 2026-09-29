@@ -1,191 +1,179 @@
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Mi cuenta - PulsePods</title>
-
-    <link rel="stylesheet" href="cuenta.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../css/cuenta.css">
+    <title>PulsePods - Mi cuenta</title>
 </head>
-
 <body>
 
-    <header class="barra-superior">
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item logo" href="../index.html">PULSEPODS</a>
 
-        <div class="logo">
-            PulsePods
+            <a role="button" class="navbar-burger" id="burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
         </div>
 
-        <button class="boton-menu" onclick="mostrarMenu()">
-            
-        </button>
+        <div class="navbar-menu" id="menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="../inicio/index.html">Inicio</a>
+                <a class="navbar-item" href="../catalogo/catalogo.html">Catálogo</a>
+                <a class="navbar-item" href="favoritos.html">Favoritos</a>
+                <a class="navbar-item" href="mispedidos.html">Mis pedidos</a>
+                <a class="navbar-item" href="cuenta.html">Cuenta</a>
+            </div>
+        </div>
+    </div>
+</nav>
 
-    </header>
+<section class="section">
 
+    <div class="container">
 
-    <div class="contenedor">
+        <div class="has-text-centered mb-6">
+            <h1 class="title is-1">Mi cuenta</h1>
+            <p class="subtitulo">
+                Administra tu cuenta y tus preferencias
+            </p>
+        </div>
 
-  
-        <aside class="menu-lateral" id="menuLateral">
+        <div class="columns is-variable is-6">
 
-            <div class="perfil-menu">
+            <div class="column is-5">
 
-                <div class="foto-perfil">
-                    <span id="inicialUsuario">U</span>
-                </div>
+                <div class="box cuenta-acceso">
 
-                <div>
-                    <strong id="nombreMenu">Usuario</strong>
-                    <h2 id="correoMenu">correo@email.com</h2>
+                    <div class="perfil-icono">
+                        <span>👤</span>
+                    </div>
+
+                    <h2 class="title is-3">
+                        Tu cuenta
+                    </h2>
+
+                    <p class="mensaje-cuenta">
+                        Inicia sesión o regístrate para ver tus datos,
+                        administrar tus pedidos y acceder a todas las
+                        funciones de tu cuenta.
+                    </p>
+
+                    <div class="botones-cuenta">
+
+                        <a href="../login y register/login.html" class="button boton-principal">
+                            Iniciar sesión
+                        </a>
+
+                        <a href="../login y register/registro.html" class="button boton-secundario">
+                            Registrarse
+                        </a>
+
+                    </div>
+
                 </div>
 
             </div>
 
+            <div class="column is-7">
 
-            <nav>
+                <div class="box ajustes">
 
-                <button onclick="mostrarSeccion('perfil')">
-                    👤 Mi perfil
-                </button>
+                    <h2 class="title is-3">
+                        Ajustes de cuenta
+                    </h2>
 
-                <button onclick="mostrarSeccion('favoritos')">
-                    ❤️ Mis favoritos
-                </button>
+                    <div class="ajuste">
 
-                <button onclick="mostrarSeccion('pedidos')">
-                    📦 Mis pedidos
-                </button>
-
-                <button onclick="mostrarSeccion('ajustes')">
-                    ⚙️ Ajustes
-                </button>
-
-            </nav>
-
-
-            <button class="cerrar-sesion" onclick="cerrarSesion()">
-                🚪 Cerrar sesión
-            </button>
-
-        </aside>
-
-
-      
-        <main class="contenido">
-
-
-           
-            <section id="perfil" class="seccion activa">
-
-                <div class="titulo-seccion">
-
-                    <div>
-                        <h1>Mi perfil</h1>
-                        <p>Administra la información de tu cuenta.</p>
-                    </div>
-
-                </div>
-
-
-                <div class="tarjeta perfil-principal">
-
-                    <div class="foto-grande">
-                        <span id="inicialPerfil">U</span>
-                    </div>
-
-                    <div>
-
-                        <h2 id="nombrePerfil">
-                            Usuario
-                        </h2>
-
-                        <p id="correoPerfil">
-                            correo@email.com
-                        </p>
-
-                        <span class="estado">
-                            ● Cuenta activa
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="tarjeta">
-
-                    <h2>Información personal</h2>
-
-                    <div class="formulario">
-
-                        <div class="campo">
-
-                            <label>
-                                Nombre
-                            </label>
-
-                            <input
-                                type="text"
-                                id="nombreInput"
-                                placeholder="Tu nombre">
-
+                        <div>
+                            <h3>Datos personales</h3>
+                            <p>
+                                Consulta y modifica tus datos personales.
+                            </p>
                         </div>
 
+                        <a href="datos.html" class="button boton-ajuste">
+                            Ver datos
+                        </a>
 
-                        <div class="campo">
+                    </div>
 
-                            <label>
-                                Correo electrónico
-                            </label>
+                    <div class="ajuste">
 
-                            <input
-                                type="email"
-                                id="correoInput"
-                                placeholder="Tu correo">
-
+                        <div>
+                            <h3>Mis pedidos</h3>
+                            <p>
+                                Consulta los productos que has agregado a tus pedidos.
+                            </p>
                         </div>
 
-                    </div>
-
-
-                    <button
-                        class="boton-principal"
-                        onclick="guardarPerfil()">
-
-                        Guardar cambios
-
-                    </button>
-
-                </div>
-
-            </section>
-
-
-
-            
-            <section id="favoritos" class="seccion">
-
-                <div class="titulo-seccion">
-
-                    <div>
-
-                        <h1></h1>
-
-                        <p>
-                           
-                        </p>
+                        <a href="mispedidos.html" class="button boton-ajuste">
+                            Ver pedidos
+                        </a>
 
                     </div>
 
+                    <div class="ajuste">
+
+                        <div>
+                            <h3>Mis favoritos</h3>
+                            <p>
+                                Consulta los productos que has guardado.
+                            </p>
+                        </div>
+
+                        <a href="favoritos.html" class="button boton-ajuste">
+                            Ver favoritos
+                        </a>
+
+                    </div>
+
+                    <div class="ajuste">
+
+                        <div>
+                            <h3>Cambiar contraseña</h3>
+                            <p>
+                                Modifica la contraseña de tu cuenta.
+                            </p>
+                        </div>
+
+                        <a href="cambiar-password.html" class="button boton-ajuste">
+                            Cambiar
+                        </a>
+
+                    </div>
+
+                    <div class="ajuste">
+
+                        <div>
+                            <h3>Notificaciones</h3>
+                            <p>
+                                Configura las notificaciones de tu cuenta.
+                            </p>
+                        </div>
+
+                        <a href="notificaciones.html" class="button boton-ajuste">
+                            Configurar
+                        </a>
+
+                    </div>
+
                 </div>
 
+            </div>
 
-                <div
-                    id="listaFavoritos"
-                    class="productos">
+        </div>
 
-                </div>
+    </div>
 
+</section>
+
+<script src="../js/cuenta.js"></script>
+
+</body>
+</html>

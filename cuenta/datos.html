@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../css/datos.css">
+    <title>PulsePods - Mis datos</title>
+</head>
+<body>
+
+<nav class="navbar" role="navigation">
+    <div class="container">
+
+        <div class="navbar-brand">
+            <a class="navbar-item logo" href="../index.html">
+                PULSEPODS
+            </a>
+
+            <a role="button" class="navbar-burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+
+        <div class="navbar-menu" id="menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="../inicio/index.html">Inicio</a>
+                <a class="navbar-item" href="../catalogo/catalogo.html">Catálogo</a>
+                <a class="navbar-item" href="favoritos.html">Favoritos</a>
+                <a class="navbar-item" href="mispedidos.html">Mis pedidos</a>
+                <a class="navbar-item" href="cuenta.html">Cuenta</a>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+<section class="section">
+    <div class="container">
+
+        <div class="has-text-centered mb-6">
+            <h1 class="title is-1">Mis datos</h1>
+            <p class="subtitulo">
+                Información asociada a tu cuenta PulsePods
+            </p>
+        </div>
+
+        <div class="columns is-centered">
+
+            <div class="column is-8">
+
+                <div class="box datos">
+
+                    <div class="perfil">
+                        <div class="perfil-icono">
+                            👤
+                        </div>
+
+                        <div>
+                            <h2>Datos personales</h2>
+                            <p>Información de tu cuenta</p>
+                        </div>
+                    </div>
+
+                    <div class="dato">
+                        <span class="dato-titulo">Nombre completo</span>
+                        <span class="dato-valor">Nombre del usuario</span>
+                    </div>
+
+                    <div class="dato">
+                        <span class="dato-titulo">Correo electrónico</span>
+                        <span class="dato-valor">correo@ejemplo.com</span>
+                    </div>
+
+                    <div class="dato">
+                        <span class="dato-titulo">Teléfono</span>
+                        <span class="dato-valor">300 000 0000</span>
+                    </div>
+
+                    <div class="dato">
+                        <span class="dato-titulo">Dirección</span>
+                        <span class="dato-valor">Dirección del usuario</span>
+                    </div>
+
+                    <div class="dato">
+                        <span class="dato-titulo">Ciudad</span>
+                        <span class="dato-valor">Ciudad del usuario</span>
+                    </div>
+
+                    <div class="dato">
+                        <span class="dato-titulo">Fecha de registro</span>
+                        <span class="dato-valor">-- / -- / ----</span>
+                    </div>
+
+                    <div class="botones">
+                        <a href="editar-datos.html" class="button boton-principal">
+                            Editar datos
+                        </a>
+
+                        <a href="cuenta.html" class="button boton-secundario">
+                            Volver a cuenta
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<script>
+const burger = document.getElementById("burger");
+const menu = document.getElementById("menu");
+
+burger.addEventListener("click", () => {
+    burger.classList.toggle("is-active");
+    menu.classList.toggle("is-active");
+});
+</script>
+
+</body>
+</html>

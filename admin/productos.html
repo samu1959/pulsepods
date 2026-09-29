@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <title>PulsePods - Productos</title>
+</head>
+
+<body>
+
+<nav class="navbar" role="navigation">
+
+    <div class="container">
+
+        <div class="navbar-brand">
+
+            <a class="navbar-item logo" href="../inicio/index.html">
+                PULSEPODS
+            </a>
+
+            <a
+                role="button"
+                class="navbar-burger"
+                id="burger"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+
+        </div>
+
+        <div class="navbar-menu" id="menu">
+
+            <div class="navbar-end">
+
+                <a class="navbar-item" href="cuentaAdmin.html">
+                    Panel
+                </a>
+
+                <a class="navbar-item" href="productos.html">
+                    Productos
+                </a>
+
+                <a class="navbar-item" href="agregar-producto.html">
+                    Agregar producto
+                </a>
+
+                <a class="navbar-item" href="pedidos.html">
+                    Pedidos
+                </a>
+
+                <a class="navbar-item" href="../catalogo/catalogo.html">
+                    Ver tienda
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="admin-encabezado mb-6">
+
+            <div>
+
+                <h1 class="title is-1">
+                    Productos
+                </h1>
+
+                <p class="subtitulo">
+                    Administra los productos de PulsePods
+                </p>
+
+            </div>
+
+            <a
+                href="agregar-producto.html"
+                class="button boton-principal"
+            >
+                + Agregar producto
+            </a>
+
+        </div>
+
+
+        <div
+            id="sinProductos"
+            class="box panel has-text-centered"
+        >
+            <h2 class="title is-3">
+                No hay productos agregados
+            </h2>
+
+            <p class="subtitulo">
+                Agrega tu primer producto desde el panel de administrador.
+            </p>
+        </div>
+
+
+        <div
+            id="listaProductos"
+            class="columns is-multiline"
+        ></div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+const burger = document.getElementById("burger");
+const menu = document.getElementById("menu");
+
+burger.addEventListener("click", () => {
+    burger.classList.toggle("is-active");
+    menu.classList.toggle("is-active");
+});
+
+const listaProductos =
+    document.getElementById("listaProductos");
+
+const sinProductos =
+    document.getElementById("sinProductos");
+
+let productos =
+    JSON.parse(localStorage.getItem("productos")) || [];
+
+
+function mostrarProductos() {
+
+    listaProductos.innerHTML = "";
+
+    if (productos.length === 0) {
+        sinProductos.style.display = "block";
+        return;
+    }
+
+    sinProductos.style.display = "none";
+
+    productos.forEach((producto, indice) => {
+
+        const columna = document.createElement("div");
+
+        columna.className = "column is-4";
+
+        columna.innerHTML = `
+            <div class="box panel">
+
+                <h2 class="title is-4">
+                    ${producto.nombre}
+                </h2>
+
+                <p class="subtitulo">
+                    ${producto.descripcion}
+                </p>
+
+                <p class="subtitulo mt-4">
+                    <strong style="color:#F5A623;">
+                        Precio:
+                    </strong>
+                    $${Number(producto.precio).toLocaleString("es-CO")}
+                </p>
+
+                <p class="subtitulo">
+                    <strong style="color:#F5A623;">
+                        Stock:
+                    </strong>
+                    ${producto.stock}
+                </p>
+
+                <p class="subtitulo">
+                    <strong style="color:#F5A623;">
+                        Estado:
+                    </strong>
+                    ${producto.estado}
+                </p>
+
+                <button
+                    class="button boton-secundario is-fullwidth mt-5"
+                    onclick="eliminarProducto(${indice})"
+                >
+                    Eliminar producto
+                </button>
+
+            </div>
+        `;
+
+        listaProductos.appendChild(columna);
+
+    });
+
+}
+
+
+function eliminarProducto(indice) {
+
+    productos.splice(indice, 1);
+
+    localStorage.setItem(
+        "productos",
+        JSON.stringify(productos)
+    );
+
+    mostrarProductos();
+}
+
+
+mostrarProductos();
+
+</script>
+
+</body>
+</html>

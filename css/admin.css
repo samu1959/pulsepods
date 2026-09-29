@@ -1,0 +1,182 @@
+html,
+body {
+    min-height: 100%;
+    background-color: #303030;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: black;
+    border-bottom: 2px solid #F5A623;
+}
+
+.navbar-item {
+    color: #F5A623;
+}
+
+.navbar-item:hover {
+    background-color: #F5A623;
+    color: black;
+}
+
+.logo {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.5rem;
+    color: #F5A623 !important;
+    letter-spacing: 1px;
+}
+
+
+.navbar-burger {
+    color: #F5A623;
+}
+
+.section {
+    min-height: calc(100vh - 52px);
+    padding-top: 4rem;
+}
+
+.title {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #F5A623 !important;
+}
+
+.subtitulo {
+    color: white;
+    font-size: 1.1rem;
+}
+
+.admin-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.administrador {
+    background-color: #F5A623;
+    color: black;
+    padding: 0.7rem 1.3rem;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.estadistica {
+    background-color: black;
+    border: 2px solid #F5A623;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    min-height: 130px;
+}
+
+.estadistica-icono {
+    font-size: 2.5rem;
+}
+
+.estadistica-titulo {
+    color: white;
+}
+
+.estadistica-numero {
+    color: #F5A623;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2.5rem;
+}
+
+.panel {
+    background-color: black;
+    border: 2px solid #F5A623;
+    border-radius: 14px;
+}
+
+.opcion-admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid #F5A623;
+}
+
+.opcion-admin h3 {
+    color: #F5A623;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.3rem;
+}
+
+.opcion-admin p {
+    color: white;
+    margin-top: 0.4rem;
+}
+
+.administrador-info {
+    text-align: center;
+}
+
+.administrador-info p {
+    color: white;
+    line-height: 1.7;
+}
+
+.admin-icono {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 1.5rem;
+    border: 2px solid #F5A623;
+    border-radius: 50%;
+    background-color: #303030;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+}
+
+.boton-principal {
+    background-color: #F5A623;
+    border: 2px solid #F5A623;
+    color: black;
+    font-weight: bold;
+}
+
+.boton-principal:hover {
+    background-color: black;
+    color: #F5A623;
+}
+
+.boton-secundario {
+    background-color: transparent;
+    border: 2px solid #F5A623;
+    color: #F5A623;
+    font-weight: bold;
+}
+
+.boton-secundario:hover {
+    background-color: #F5A623;
+    color: black;
+}
+
+@media screen and (max-width: 768px) {
+
+    .section {
+        padding: 2rem 1rem;
+    }
+
+    .admin-encabezado {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .opcion-admin {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .opcion-admin .button {
+        width: 100%;
+    }
+}

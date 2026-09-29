@@ -182,3 +182,73 @@ a:hover {
     }
 
 }
+
+.cantidad-favorito {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.cantidad-contenedor {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cantidad-titulo {
+    color: #F5A623;
+    font-weight: bold;
+    margin: 0;
+}
+
+.cantidad-contenedor .buttons {
+    margin: 0;
+}
+
+.cantidad-input {
+    width: 60px;
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid #F5A623;
+    color: white;
+    box-shadow: none;
+}
+
+.cantidad-boton {
+    background-color: #F5A623;
+    border: 2px solid #F5A623;
+    color: black;
+    font-weight: bold;
+}
+
+.cantidad-boton:hover {
+    background-color: black;
+    color: #F5A623;
+}
+
+.boton-corazon {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 2.3rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    transition: 0.2s;
+}
+
+.boton-corazon:hover {
+    color: #F5A623;
+    transform: scale(1.15);
+}
+
+.boton-corazon.activo {
+    color: #F5A623;
+}
+
+@media screen and (max-width: 768px) {
+    .cantidad-favorito {
+        gap: 1rem;
+    }
+}

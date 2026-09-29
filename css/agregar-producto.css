@@ -1,0 +1,135 @@
+html,
+body {
+    min-height: 100%;
+    background-color: #303030;
+}
+
+.navbar {
+    background-color: black;
+    border-bottom: 2px solid #F5A623;
+}
+
+.navbar-item {
+    color: #F5A623;
+}
+
+.navbar-item:hover {
+    background-color: #F5A623;
+    color: black;
+}
+
+.logo {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.5rem;
+    color: #F5A623 !important;
+}
+
+
+
+.navbar-burger {
+    color: #F5A623;
+}
+
+.section {
+    min-height: calc(100vh - 52px);
+    padding-top: 4rem;
+}
+
+.title {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #F5A623 !important;
+}
+
+.subtitulo {
+    color: white;
+}
+
+.producto-formulario {
+    background-color: black;
+    border: 2px solid #F5A623;
+    border-radius: 14px;
+    padding: 2rem;
+}
+
+.label {
+    color: #F5A623 !important;
+}
+
+.input,
+.textarea,
+.select select {
+    background-color: #303030;
+    border: 2px solid #F5A623;
+    color: white;
+    box-shadow: none;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+    color: #999;
+}
+
+.input:focus,
+.textarea:focus,
+.select select:focus {
+    border-color: #F5A623;
+    box-shadow: 0 0 0 1px #F5A623;
+}
+
+.select:not(.is-multiple):not(.is-loading)::after {
+    border-color: #F5A623;
+}
+
+.ayuda {
+    color: #aaa;
+    margin-top: 0.5rem;
+}
+
+.botones {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.boton-principal {
+    background-color: #F5A623;
+    border: 2px solid #F5A623;
+    color: black;
+    font-weight: bold;
+}
+
+.boton-principal:hover {
+    background-color: black;
+    color: #F5A623;
+}
+
+.boton-secundario {
+    background-color: transparent;
+    border: 2px solid #F5A623;
+    color: #F5A623;
+    font-weight: bold;
+}
+
+.boton-secundario:hover {
+    background-color: #F5A623;
+    color: black;
+}
+
+.mensaje {
+    display: none;
+    padding: 1rem;
+    margin-top: 1rem;
+    border: 2px solid #F5A623;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+
+    .section {
+        padding: 2rem 1rem;
+    }
+
+    .botones {
+        flex-direction: column;
+    }
+}

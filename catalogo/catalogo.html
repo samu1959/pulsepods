@@ -1,155 +1,153 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>PulsePods - Catálogo</title>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
     <link rel="stylesheet" href="../css/catalogo.css">
+    <title>PulsePods - Catálogo</title>
 </head>
 
 <body>
 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
 
-        <div class="container">
+        <div class="navbar-brand">
 
-            <div class="navbar-brand">
+            <a class="navbar-item logo" href="../inicio/index.html">
+                PULSEPODS
+            </a>
 
-                <a class="navbar-item logo" href="../inicio/index.html">
-                    PULSEPODS
-                </a>
+            <a
+                role="button"
+                class="navbar-burger"
+                id="burger"
+                aria-label="menu"
+                aria-expanded="false"
+            >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
 
-                <a
-                    role="button"
-                    class="navbar-burger"
-                    id="burger"
-                    aria-label="menu"
-                    aria-expanded="false"
-                >
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
+        </div>
 
-            </div>
+        <div class="navbar-menu" id="menu">
 
-            <div class="navbar-menu" id="menu">
+            <div class="navbar-busqueda">
 
-                <div class="navbar-end">
+                <div class="field has-addons">
 
-                    <a class="navbar-item" href="../inicio/index.html">
-                        Inicio
-                    </a>
+                    <div class="control is-expanded">
+                        <input
+                            class="input barra-busqueda"
+                            type="text"
+                            placeholder="Buscar productos..."
+                        >
+                    </div>
 
-                    <a class="navbar-item activo" href="catalogo.html">
-                        Catálogo
-                    </a>
-
-                    <a class="navbar-item" href="../cuenta/favoritos.html">
-                        Favoritos
-                    </a>
-
-                    <a class="navbar-item" href="../cuenta/mispedidos.html">
-                        Mis Pedidos
-                    </a>
+                    <div class="control">
+                        <button class="button boton-busqueda">
+                            Buscar
+                        </button>
+                    </div>
 
                 </div>
 
             </div>
 
+            <div class="navbar-end">
+
+                <a class="navbar-item" href="../inicio/index.html">
+                    Inicio
+                </a>
+
+                <a class="navbar-item" href="catalogo.html">
+                    Catálogo
+                </a>
+
+                <a class="navbar-item" href="../cuenta/favoritos.html">
+                    Favoritos
+                </a>
+
+                <a class="navbar-item" href="../cuenta/mispedidos.html">
+                    Mis pedidos
+                </a>
+
+                <a class="navbar-item" href="../cuenta/cuenta.html">
+                    Cuenta
+                </a>
+
+            </div>
+
         </div>
 
-    </nav>
+    </div>
+</nav>
 
 
-    <section class="section">
+<section class="section">
 
-        <div class="container">
+    <div class="container">
 
-            <h1 class="title has-text-centered">
+        <div class="has-text-centered mb-6">
+
+            <h1 class="title is-1">
                 Productos
             </h1>
 
+            <p class="subtitle">
+                Encuentra tus PulsePods favoritos
+            </p>
+
         </div>
 
 
-        <div class="container">
+        <div class="columns is-multiline">
 
-            <div class="columns">
 
-                <div class="column">
+            <div class="column is-4">
 
-                    <div class="card">
+                <div
+                    class="card producto-card"
+                    onclick="abrirProducto()"
+                >
 
-                        <div class="card-image">
+                    <div class="card-image">
 
-                            <figure class="image is-4by5">
+                        <figure class="image is-4by5">
 
-                                <img
-                                    src="ChatGPT Image 1 ago 2026, 03_44_04 p.m..png"
-                                    alt="Producto 1">
+                            <img
+                                src="ChatGPT Image 1 ago 2026, 03_44_04 p.m..png"
+                                alt="PulsePods 1"
+                            >
 
-                            </figure>
-
-                        </div>
-
-                        <div class="card-content">
-                            hola
-                        </div>
+                        </figure>
 
                     </div>
 
-                </div>
+                    <div class="card-content">
 
+                        <div class="producto-encabezado">
 
-                <div class="column">
+                            <h2 class="producto-nombre">
+                                PulsePods 1
+                            </h2>
 
-                    <div class="card">
-
-                        <div class="card-image">
-
-                            <figure class="image is-4by5">
-
-                                <img
-                                    src="ChatGPT Image 2 ago 2026, 03_43_59 p.m..png"
-                                    alt="Producto 2">
-
-                            </figure>
-
-                        </div>
-
-                        <div class="card-content">
-                            hola
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="column">
-
-                    <div class="card">
-
-                        <div class="card-image">
-
-                            <figure class="image is-4by5">
-
-                                <img
-                                    src="ChatGPT Image 3 ago 2026, 03_43_54 p.m..png"
-                                    alt="Producto 3">
-
-                            </figure>
+                            <button
+                                class="boton-corazon"
+                                aria-label="Agregar a favoritos"
+                                onclick="favorito(event, this)"
+                            >
+                                ♥
+                            </button>
 
                         </div>
 
-                        <div class="card-content">
-                            hola
-                        </div>
+                        <p class="producto-descripcion">
+                            Audífonos inalámbricos PulsePods.
+                        </p>
 
                     </div>
 
@@ -157,82 +155,48 @@
 
             </div>
 
-        </div>
 
+            <div class="column is-4">
 
-        <div class="container">
+                <div
+                    class="card producto-card"
+                    onclick="abrirProducto()"
+                >
 
-            <div class="columns">
+                    <div class="card-image">
 
-                <div class="column">
+                        <figure class="image is-4by5">
 
-                    <div class="card">
+                            <img
+                                src="ChatGPT Image 2 ago 2026, 03_43_59 p.m..png"
+                                alt="PulsePods 2"
+                            >
 
-                        <div class="card-image">
-
-                            <figure class="image is-4by5">
-
-                                <img
-                                    src="ChatGPT Image 4 ago 2026, 03_43_49 p.m..png"
-                                    alt="Producto 4">
-
-                            </figure>
-
-                        </div>
-
-                        <div class="card-content">
-                            hola
-                        </div>
+                        </figure>
 
                     </div>
 
-                </div>
+                    <div class="card-content">
 
+                        <div class="producto-encabezado">
 
-                <div class="column">
+                            <h2 class="producto-nombre">
+                                PulsePods 2
+                            </h2>
 
-                    <div class="card">
-
-                        <div class="card-image">
-
-                            <figure class="image is-4by5">
-
-                                <img
-                                    src="ChatGPT Image 5 ago 2026, 03_43_39 p.m..png"
-                                    alt="Producto 5">
-
-                            </figure>
-
-                        </div>
-
-                        <div class="card-content">
-                            hola
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="column">
-
-                    <div class="card">
-
-                        <div class="card-image">
-
-                            <figure class="image is-4by5">
-
-                                <img
-                                    src="ChatGPT Image 6 ago 2026, 03_43_44 p.m..png"
-                                    alt="Producto 6">
-
-                            </figure>
+                            <button
+                                class="boton-corazon"
+                                aria-label="Agregar a favoritos"
+                                onclick="favorito(event, this)"
+                            >
+                                ♥
+                            </button>
 
                         </div>
 
-                        <div class="card-content">
-                            hola
-                        </div>
+                        <p class="producto-descripcion">
+                            Audífonos inalámbricos PulsePods.
+                        </p>
 
                     </div>
 
@@ -240,23 +204,230 @@
 
             </div>
 
+
+            <div class="column is-4">
+
+                <div
+                    class="card producto-card"
+                    onclick="abrirProducto()"
+                >
+
+                    <div class="card-image">
+
+                        <figure class="image is-4by5">
+
+                            <img
+                                src="ChatGPT Image 3 ago 2026, 03_43_54 p.m..png"
+                                alt="PulsePods 3"
+                            >
+
+                        </figure>
+
+                    </div>
+
+                    <div class="card-content">
+
+                        <div class="producto-encabezado">
+
+                            <h2 class="producto-nombre">
+                                PulsePods 3
+                            </h2>
+
+                            <button
+                                class="boton-corazon"
+                                aria-label="Agregar a favoritos"
+                                onclick="favorito(event, this)"
+                            >
+                                ♥
+                            </button>
+
+                        </div>
+
+                        <p class="producto-descripcion">
+                            Audífonos inalámbricos PulsePods.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="column is-4">
+
+                <div
+                    class="card producto-card"
+                    onclick="abrirProducto()"
+                >
+
+                    <div class="card-image">
+
+                        <figure class="image is-4by5">
+
+                            <img
+                                src="ChatGPT Image 4 ago 2026, 03_43_49 p.m..png"
+                                alt="PulsePods 4"
+                            >
+
+                        </figure>
+
+                    </div>
+
+                    <div class="card-content">
+
+                        <div class="producto-encabezado">
+
+                            <h2 class="producto-nombre">
+                                PulsePods 4
+                            </h2>
+
+                            <button
+                                class="boton-corazon"
+                                aria-label="Agregar a favoritos"
+                                onclick="favorito(event, this)"
+                            >
+                                ♥
+                            </button>
+
+                        </div>
+
+                        <p class="producto-descripcion">
+                            Audífonos inalámbricos PulsePods.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="column is-4">
+
+                <div
+                    class="card producto-card"
+                    onclick="abrirProducto()"
+                >
+
+                    <div class="card-image">
+
+                        <figure class="image is-4by5">
+
+                            <img
+                                src="ChatGPT Image 5 ago 2026, 03_43_39 p.m..png"
+                                alt="PulsePods 5"
+                            >
+
+                        </figure>
+
+                    </div>
+
+                    <div class="card-content">
+
+                        <div class="producto-encabezado">
+
+                            <h2 class="producto-nombre">
+                                PulsePods 5
+                            </h2>
+
+                            <button
+                                class="boton-corazon"
+                                aria-label="Agregar a favoritos"
+                                onclick="favorito(event, this)"
+                            >
+                                ♥
+                            </button>
+
+                        </div>
+
+                        <p class="producto-descripcion">
+                            Audífonos inalámbricos PulsePods.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="column is-4">
+
+                <div
+                    class="card producto-card"
+                    onclick="abrirProducto()"
+                >
+
+                    <div class="card-image">
+
+                        <figure class="image is-4by5">
+
+                            <img
+                                src="ChatGPT Image 6 ago 2026, 03_43_44 p.m..png"
+                                alt="PulsePods 6"
+                            >
+
+                        </figure>
+
+                    </div>
+
+                    <div class="card-content">
+
+                        <div class="producto-encabezado">
+
+                            <h2 class="producto-nombre">
+                                PulsePods 6
+                            </h2>
+
+                            <button
+                                class="boton-corazon"
+                                aria-label="Agregar a favoritos"
+                                onclick="favorito(event, this)"
+                            >
+                                ♥
+                            </button>
+
+                        </div>
+
+                        <p class="producto-descripcion">
+                            Audífonos inalámbricos PulsePods.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <script>
+<script>
 
-        const burger = document.getElementById("burger");
-        const menu = document.getElementById("menu");
+const burger = document.getElementById("burger");
+const menu = document.getElementById("menu");
 
-        burger.addEventListener("click", () => {
-            burger.classList.toggle("is-active");
-            menu.classList.toggle("is-active");
-        });
+burger.addEventListener("click", () => {
+    burger.classList.toggle("is-active");
+    menu.classList.toggle("is-active");
+});
 
-    </script>
+function abrirProducto() {
+    window.location.href = "producto.html";
+}
+
+function favorito(event, boton) {
+    event.stopPropagation();
+    boton.classList.toggle("activo");
+}
+
+</script>
 
 </body>
-
 </html>

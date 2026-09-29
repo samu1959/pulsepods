@@ -1,0 +1,178 @@
+html,
+body {
+    min-height: 100%;
+    background-color: #303030;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: black;
+    border-bottom: 2px solid #F5A623;
+}
+
+.navbar-item {
+    color: #F5A623;
+}
+
+.navbar-item:hover {
+    background-color: #F5A623;
+    color: black;
+}
+
+.logo {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.5rem;
+    color: #F5A623 !important;
+    letter-spacing: 1px;
+}
+
+.activo {
+    background-color: #F5A623;
+    color: black !important;
+}
+
+.navbar-burger {
+    color: #F5A623;
+}
+
+.section {
+    min-height: calc(100vh - 52px);
+    padding-top: 4rem;
+}
+
+.title {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #F5A623 !important;
+}
+
+.subtitulo {
+    color: white;
+    font-size: 1.1rem;
+}
+
+.cuenta-acceso,
+.ajustes {
+    background-color: black;
+    border: 2px solid #F5A623;
+    border-radius: 14px;
+}
+
+.cuenta-acceso {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.perfil-icono {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1.5rem;
+    border: 2px solid #F5A623;
+    border-radius: 50%;
+    background-color: #303030;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.perfil-icono span {
+    font-size: 3rem;
+}
+
+.mensaje-cuenta {
+    color: white;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.botones-cuenta {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.boton-principal {
+    background-color: #F5A623;
+    color: black;
+    border: 2px solid #F5A623;
+    font-weight: bold;
+}
+
+.boton-principal:hover {
+    background-color: black;
+    color: #F5A623;
+}
+
+.boton-secundario {
+    background-color: transparent;
+    color: #F5A623;
+    border: 2px solid #F5A623;
+    font-weight: bold;
+}
+
+.boton-secundario:hover {
+    background-color: #F5A623;
+    color: black;
+}
+
+.ajustes {
+    padding: 2rem;
+}
+
+.ajuste {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid #F5A623;
+}
+
+.ajuste h3 {
+    color: #F5A623;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.25rem;
+}
+
+.ajuste p {
+    color: white;
+    margin-top: 0.4rem;
+    line-height: 1.5;
+}
+
+.boton-ajuste {
+    background-color: transparent;
+    color: #F5A623;
+    border: 2px solid #F5A623;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.boton-ajuste:hover {
+    background-color: #F5A623;
+    color: black;
+}
+
+@media screen and (max-width: 768px) {
+
+    .section {
+        padding: 2rem 1rem;
+    }
+
+    .cuenta-acceso {
+        margin-bottom: 1.5rem;
+    }
+
+    .ajuste {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .boton-ajuste {
+        width: 100%;
+    }
+}

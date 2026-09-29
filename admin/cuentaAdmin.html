@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <title>PulsePods - Administrador</title>
+</head>
+
+<body>
+
+<nav class="navbar" role="navigation">
+    <div class="container">
+
+        <div class="navbar-brand">
+
+            <a class="navbar-item logo" href="../inicio/index.html">
+                PULSEPODS
+            </a>
+
+            <a
+                role="button"
+                class="navbar-burger"
+                id="burger"
+                aria-label="menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+
+        </div>
+
+        <div class="navbar-menu" id="menu">
+
+            <div class="navbar-end">
+
+                <a class="navbar-item" href="cuentaAdmin.html">
+                    Panel
+                </a>
+
+                <a class="navbar-item" href="productos.html">
+                    Productos
+                </a>
+
+                <a class="navbar-item" href="agregar-producto.html">
+                    Agregar producto
+                </a>
+
+                <a class="navbar-item" href="pedidos.html">
+                    Pedidos
+                </a>
+
+                <a class="navbar-item" href="../catalogo/catalogo.html">
+                    Ver tienda
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</nav>
+
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="admin-encabezado">
+
+            <div>
+                <h1 class="title is-1">
+                    Panel de administrador
+                </h1>
+
+                <p class="subtitulo">
+                    Administra PulsePods desde un solo lugar
+                </p>
+            </div>
+
+            <div class="administrador">
+                <span>Administrador</span>
+            </div>
+
+        </div>
+
+
+        <div class="columns is-multiline mt-5">
+
+            <div class="column is-4">
+
+                <div class="box estadistica">
+
+                    <span class="estadistica-icono">
+                        📦
+                    </span>
+
+                    <div>
+                        <p class="estadistica-titulo">
+                            Productos
+                        </p>
+
+                        <p
+                            class="estadistica-numero"
+                            id="cantidadProductos"
+                        >
+                            0
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="column is-4">
+
+                <div class="box estadistica">
+
+                    <span class="estadistica-icono">
+                        🛒
+                    </span>
+
+                    <div>
+                        <p class="estadistica-titulo">
+                            Pedidos
+                        </p>
+
+                        <p
+                            class="estadistica-numero"
+                            id="cantidadPedidos"
+                        >
+                            0
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="column is-4">
+
+                <div class="box estadistica">
+
+                    <span class="estadistica-icono">
+                        ❤️
+                    </span>
+
+                    <div>
+                        <p class="estadistica-titulo">
+                            Favoritos
+                        </p>
+
+                        <p
+                            class="estadistica-numero"
+                            id="cantidadFavoritos"
+                        >
+                            0
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="columns is-variable is-5 mt-3">
+
+            <div class="column is-8">
+
+                <div class="box panel">
+
+                    <h2 class="title is-3">
+                        Administración
+                    </h2>
+
+
+                    <div class="opcion-admin">
+
+                        <div>
+                            <h3>Agregar producto</h3>
+
+                            <p>
+                                Registra nuevos productos en PulsePods.
+                            </p>
+                        </div>
+
+                        <a
+                            href="agregar-producto.html"
+                            class="button boton-principal"
+                        >
+                            Agregar
+                        </a>
+
+                    </div>
+
+
+                    <div class="opcion-admin">
+
+                        <div>
+                            <h3>Administrar productos</h3>
+
+                            <p>
+                                Consulta, modifica o elimina productos.
+                            </p>
+                        </div>
+
+                        <a
+                            href="productos.html"
+                            class="button boton-secundario"
+                        >
+                            Ver productos
+                        </a>
+
+                    </div>
+
+
+                    <div class="opcion-admin">
+
+                        <div>
+                            <h3>Administrar pedidos</h3>
+
+                            <p>
+                                Consulta los pedidos realizados por los clientes.
+                            </p>
+                        </div>
+
+                        <a
+                            href="pedidos.html"
+                            class="button boton-secundario"
+                        >
+                            Ver pedidos
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="column is-4">
+
+                <div class="box panel administrador-info">
+
+                    <div class="admin-icono">
+                        👤
+                    </div>
+
+                    <h2 class="title is-3">
+                        Administrador
+                    </h2>
+
+                    <p>
+                        Desde esta cuenta puedes administrar los productos
+                        y pedidos de la tienda.
+                    </p>
+
+                    <a
+                        href="../catalogo/catalogo.html"
+                        class="button boton-principal is-fullwidth mt-5"
+                    >
+                        Ir a la tienda
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script src="../js/admin.js"></script>
+
+</body>
+</html>

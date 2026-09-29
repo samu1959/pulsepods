@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../css/agregar-producto.css">
+    <title>PulsePods - Agregar producto</title>
+</head>
+
+<body>
+
+<nav class="navbar" role="navigation">
+
+    <div class="container">
+
+        <div class="navbar-brand">
+
+            <a class="navbar-item logo" href="../inicio/index.html">
+                PULSEPODS
+            </a>
+
+            <a
+                role="button"
+                class="navbar-burger"
+                id="burger"
+                aria-label="menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+
+        </div>
+
+        <div class="navbar-menu" id="menu">
+
+            <div class="navbar-end">
+
+                <a class="navbar-item" href="cuentaAdmin.html">
+                    Panel
+                </a>
+
+                <a class="navbar-item" href="productos.html">
+                    Productos
+                </a>
+
+                <a
+                    class="navbar-item"
+                    href="agregar-producto.html"
+                >
+                    Agregar producto
+                </a>
+
+                <a class="navbar-item" href="pedidos.html">
+                    Pedidos
+                </a>
+
+                <a class="navbar-item" href="../catalogo/catalogo.html">
+                    Ver tienda
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="has-text-centered mb-6">
+
+            <h1 class="title is-1">
+                Agregar producto
+            </h1>
+
+            <p class="subtitulo">
+                Registra un nuevo producto en PulsePods
+            </p>
+
+        </div>
+
+
+        <div class="columns is-centered">
+
+            <div class="column is-8">
+
+                <form
+                    class="box producto-formulario"
+                    id="formProducto"
+                >
+
+                    <div class="field">
+
+                        <label class="label">
+                            Nombre del producto
+                        </label>
+
+                        <div class="control">
+
+                            <input
+                                id="nombre"
+                                class="input"
+                                type="text"
+                                placeholder="Nombre del producto"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="columns">
+
+                        <div class="column">
+
+                            <div class="field">
+
+                                <label class="label">
+                                    Precio
+                                </label>
+
+                                <div class="control">
+
+                                    <input
+                                        id="precio"
+                                        class="input"
+                                        type="number"
+                                        min="0"
+                                        placeholder="84900"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="column">
+
+                            <div class="field">
+
+                                <label class="label">
+                                    Stock
+                                </label>
+
+                                <div class="control">
+
+                                    <input
+                                        id="stock"
+                                        class="input"
+                                        type="number"
+                                        min="0"
+                                        placeholder="15"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label class="label">
+                            Descripción
+                        </label>
+
+                        <div class="control">
+
+                            <textarea
+                                id="descripcion"
+                                class="textarea"
+                                placeholder="Descripción del producto"
+                                required
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label class="label">
+                            Imagen
+                        </label>
+
+                        <div class="control">
+
+                            <input
+                                id="imagen"
+                                class="input"
+                                type="text"
+                                placeholder="../imagenes/producto.png"
+                                required
+                            >
+
+                        </div>
+
+                        <p class="ayuda">
+                            Escribe la ruta de la imagen del producto.
+                        </p>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label class="label">
+                            Categoría
+                        </label>
+
+                        <div class="control">
+
+                            <div class="select is-fullwidth">
+
+                                <select id="categoria">
+
+                                    <option value="audifonos">
+                                        Audífonos
+                                    </option>
+
+                                    <option value="accesorios">
+                                        Accesorios
+                                    </option>
+
+                                    <option value="otros">
+                                        Otros
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label class="label">
+                            Estado
+                        </label>
+
+                        <div class="control">
+
+                            <div class="select is-fullwidth">
+
+                                <select id="estado">
+
+                                    <option value="disponible">
+                                        Disponible
+                                    </option>
+
+                                    <option value="agotado">
+                                        Agotado
+                                    </option>
+
+                                    <option value="oculto">
+                                        Oculto
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="mensaje"
+                        class="mensaje"
+                    ></div>
+
+
+                    <div class="botones">
+
+                        <button
+                            type="submit"
+                            class="button boton-principal"
+                        >
+                            Agregar producto
+                        </button>
+
+                        <a
+                            href="productos.html"
+                            class="button boton-secundario"
+                        >
+                            Cancelar
+                        </a>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script src="../js/agregar-producto.js"></script>
+
+</body>
+</html>

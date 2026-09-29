@@ -1,147 +1,239 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
     <link rel="stylesheet" href="../css/mispedidos.css">
-
     <title>PulsePods - Mis pedidos</title>
 </head>
 
 <body>
 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
 
-        <div class="container">
+        <div class="navbar-brand">
 
-            <div class="navbar-brand">
+            <a class="navbar-item logo" href="../inicio/index.html">
+                PULSEPODS
+            </a>
 
-                <a class="navbar-item logo" href="../inicio/index.html">
-                    PULSEPODS
+            <a
+                role="button"
+                class="navbar-burger"
+                id="burger"
+                aria-label="menu"
+                aria-expanded="false"
+            >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+
+        </div>
+
+        <div class="navbar-menu" id="menu">
+
+            <div class="navbar-end">
+
+                <a class="navbar-item" href="../inicio/index.html">
+                    Inicio
                 </a>
 
-                <a
-                    role="button"
-                    class="navbar-burger"
-                    id="burger"
-                    aria-label="menu"
-                    aria-expanded="false"
-                >
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
+                <a class="navbar-item" href="../catalogo/catalogo.html">
+                    Catálogo
                 </a>
 
-            </div>
+                <a class="navbar-item" href="favoritos.html">
+                    Favoritos
+                </a>
 
-            <div class="navbar-menu" id="menu">
+                <a class="navbar-item" href="mispedidos.html">
+                    Mis pedidos
+                </a>
 
-                <div class="navbar-end">
-
-                    <a class="navbar-item" href="../inicio/index.html">
-                        Inicio
-                    </a>
-
-                    <a class="navbar-item" href="catalogo.html">
-                        Catálogo
-                    </a>
-
-                    <a class="navbar-item" href="../cuenta/favoritos.html">
-                        Favoritos
-                    </a>
-
-                    <a class="navbar-item activo" href="mispedidos.html">
-                        Mis pedidos
-                    </a>
-
-                </div>
+                <a class="navbar-item" href="cuenta.html">
+                    Cuenta
+                </a>
 
             </div>
 
         </div>
 
-    </nav>
+    </div>
+</nav>
 
 
-    <section class="section">
+<section class="section">
 
-        <div class="container">
+    <div class="container">
 
-            <div class="has-text-centered mb-6">
+        <div class="has-text-centered mb-6">
 
-                <h1 class="title is-1">
-                    Mis pedidos
-                </h1>
+            <h1 class="title is-1">
+                Mis pedidos
+            </h1>
 
-                <p class="subtitle">
-                    Productos que has agregado a tu pedido
-                </p>
+            <p class="subtitulo">
+                Consulta los productos y detalles de tu pedido
+            </p>
 
-            </div>
+        </div>
 
 
-            <div class="columns is-variable is-6">
+        <div id="vacio" class="box pedido-vacio">
+
+            <h2>No tienes productos en tu pedido</h2>
+
+            <p>
+                Agrega productos desde nuestro catálogo.
+            </p>
+
+            <a href="../catalogo/catalogo.html" class="button boton-principal mt-4">
+                Ir al catálogo
+            </a>
+
+        </div>
+
+
+        <div id="contenidoPedido">
+
+            <div class="columns is-variable is-5">
 
                 <div class="column is-8">
 
-                    <div id="pedidos">
-                    </div>
-
-                    <div
-                        id="vacio"
-                        class="has-text-centered"
-                    >
-
-                        <h2 class="title is-3">
-                            No tienes pedidos
-                        </h2>
-
-                        <p>
-                            Agrega productos desde nuestro catálogo.
-                        </p>
-
-                        <a
-                            href="../catalogo/catalogo.html"
-                            class="button mt-5"
-                        >
-                            Ir al catálogo
-                        </a>
-
-                    </div>
+                    <div id="pedidos"></div>
 
                 </div>
 
 
                 <div class="column is-4">
 
-                    <div class="card resumen">
+                    <div class="box resumen">
 
-                        <div class="card-content">
+                        <h2 class="title is-3">
+                            Resumen
+                        </h2>
 
-                            <h2 class="title is-4">
-                                Resumen del pedido
-                            </h2>
+                        <div class="resumen-fila">
 
-                            <div class="resumen-linea">
-                                <span>Productos</span>
-                                <span id="totalProductos">0</span>
-                            </div>
+                            <span>Productos</span>
 
-                            <div class="resumen-linea">
-                                <span>Total</span>
-                                <span id="totalPedido">$0</span>
-                            </div>
+                            <span id="totalProductos">
+                                0
+                            </span>
 
-                            <button
-                                id="finalizar"
-                                class="button is-fullwidth mt-5"
-                                onclick="finalizarPedido()"
+                        </div>
+
+                        <div class="resumen-fila">
+
+                            <span>Envío</span>
+
+                            <span>
+                                Gratis
+                            </span>
+
+                        </div>
+
+                        <div class="resumen-total">
+
+                            <span>Total</span>
+
+                            <span id="totalPedido">
+                                $0
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="button boton-principal is-fullwidth mt-5"
+                            onclick="finalizarPedido()"
+                        >
+                            Realizar pedido
+                        </button>
+
+                    </div>
+
+
+                    <div class="box detalles-pedido">
+
+                        <h2 class="title is-3">
+                            Detalles del pedido
+                        </h2>
+
+                        <div class="detalle">
+
+                            <span class="detalle-titulo">
+                                Número de pedido
+                            </span>
+
+                            <span class="detalle-valor">
+                                #PP-0001
+                            </span>
+
+                        </div>
+
+                        <div class="detalle">
+
+                            <span class="detalle-titulo">
+                                Estado
+                            </span>
+
+                            <span class="estado">
+                                Pendiente
+                            </span>
+
+                        </div>
+
+                        <div class="detalle">
+
+                            <span class="detalle-titulo">
+                                Fecha
+                            </span>
+
+                            <span
+                                class="detalle-valor"
+                                id="fechaPedido"
                             >
-                                Finalizar pedido
-                            </button>
+                                --
+                            </span>
+
+                        </div>
+
+                        <div class="detalle">
+
+                            <span class="detalle-titulo">
+                                Método de pago
+                            </span>
+
+                            <span class="detalle-valor">
+                                Por seleccionar
+                            </span>
+
+                        </div>
+
+                        <div class="detalle">
+
+                            <span class="detalle-titulo">
+                                Tipo de envío
+                            </span>
+
+                            <span class="detalle-valor">
+                                Envío estándar
+                            </span>
+
+                        </div>
+
+                        <div class="detalle detalle-direccion">
+
+                            <span class="detalle-titulo">
+                                Dirección de entrega
+                            </span>
+
+                            <span class="detalle-valor">
+                                Agrega una dirección en tu cuenta
+                            </span>
 
                         </div>
 
@@ -153,10 +245,9 @@
 
         </div>
 
-    </section>
+    </div>
 
-
+</section>
 
 </body>
-
 </html>

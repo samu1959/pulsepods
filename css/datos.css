@@ -1,0 +1,128 @@
+html,
+body {
+    min-height: 100%;
+    background-color: #303030;
+}
+
+.navbar {
+    background-color: black;
+    border-bottom: 2px solid #F5A623;
+}
+
+.navbar-item {
+    color: #F5A623;
+}
+
+.navbar-item:hover {
+    background-color: #F5A623;
+    color: black;
+}
+
+.logo {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.5rem;
+    color: #F5A623 !important;
+}
+
+.section {
+    min-height: calc(100vh - 52px);
+    padding-top: 4rem;
+}
+
+.title {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #F5A623 !important;
+}
+
+.subtitulo {
+    color: white;
+}
+
+.datos {
+    background-color: black;
+    border: 2px solid #F5A623;
+    border-radius: 14px;
+    padding: 2rem;
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+.perfil-icono {
+    width: 70px;
+    height: 70px;
+    border: 2px solid #F5A623;
+    border-radius: 50%;
+    background-color: #303030;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.perfil h2 {
+    color: #F5A623;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.5rem;
+}
+
+.perfil p {
+    color: white;
+}
+
+.dato {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1.3rem 0;
+    border-top: 1px solid #F5A623;
+}
+
+.dato-titulo {
+    color: #F5A623;
+    font-weight: bold;
+}
+
+.dato-valor {
+    color: white;
+    text-align: right;
+}
+
+.botones {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.boton-principal {
+    background-color: #F5A623;
+    border: 2px solid #F5A623;
+    color: black;
+    font-weight: bold;
+}
+
+.boton-secundario {
+    background-color: transparent;
+    border: 2px solid #F5A623;
+    color: #F5A623;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .dato {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .dato-valor {
+        text-align: left;
+    }
+
+    .botones {
+        flex-direction: column;
+    }
+}

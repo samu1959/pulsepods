@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../css/contrasena.css">
+    <title>PulsePods - Contraseña</title>
+</head>
+<body>
+
+<nav class="navbar" role="navigation">
+    <div class="container">
+
+        <div class="navbar-brand">
+            <a class="navbar-item logo" href="../inicio/index.html">
+                PULSEPODS
+            </a>
+
+            <a role="button" class="navbar-burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+
+        <div class="navbar-menu" id="menu">
+
+            <div class="navbar-end">
+                <a class="navbar-item" href="../inicio/index.html">Inicio</a>
+                <a class="navbar-item" href="../catalogo/catalogo.html">Catálogo</a>
+                <a class="navbar-item" href="favoritos.html">Favoritos</a>
+                <a class="navbar-item" href="mispedidos.html">Mis pedidos</a>
+                <a class="navbar-item" href="cuenta.html">Cuenta</a>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="has-text-centered mb-6">
+            <h1 class="title is-1">Contraseña</h1>
+            <p class="subtitulo">
+                Consulta y administra la contraseña de tu cuenta
+            </p>
+        </div>
+
+        <div class="columns is-centered">
+
+            <div class="column is-6">
+
+                <div class="box password-box">
+
+                    <h2 class="title is-3">
+                        Contraseña actual
+                    </h2>
+
+                    <div class="password-actual">
+
+                        <span id="passwordActual">
+                            ••••••••••
+                        </span>
+
+                        <button
+                            id="mostrarPassword"
+                            class="button boton-pequeno"
+                            onclick="mostrarPasswordActual()"
+                        >
+                            Mostrar
+                        </button>
+
+                    </div>
+
+                    <hr>
+
+                    <h2 class="title is-3">
+                        Cambiar contraseña
+                    </h2>
+
+                    <div class="field">
+
+                        <label class="label">
+                            Contraseña actual
+                        </label>
+
+                        <div class="control">
+                            <input
+                                class="input"
+                                type="password"
+                                placeholder="Escribe tu contraseña actual"
+                            >
+                        </div>
+
+                    </div>
+
+                    <div class="field">
+
+                        <label class="label">
+                            Nueva contraseña
+                        </label>
+
+                        <div class="control">
+                            <input
+                                class="input"
+                                type="password"
+                                placeholder="Escribe la nueva contraseña"
+                            >
+                        </div>
+
+                    </div>
+
+                    <div class="field">
+
+                        <label class="label">
+                            Confirmar nueva contraseña
+                        </label>
+
+                        <div class="control">
+                            <input
+                                class="input"
+                                type="password"
+                                placeholder="Repite la nueva contraseña"
+                            >
+                        </div>
+
+                    </div>
+
+                    <div class="botones">
+
+                        <button class="button boton-principal">
+                            Cambiar contraseña
+                        </button>
+
+                        <a href="cuenta.html" class="button boton-secundario">
+                            Volver a cuenta
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+const burger = document.getElementById("burger");
+const menu = document.getElementById("menu");
+
+burger.addEventListener("click", () => {
+    burger.classList.toggle("is-active");
+    menu.classList.toggle("is-active");
+});
+
+let passwordVisible = false;
+
+function mostrarPasswordActual() {
+    const password = document.getElementById("passwordActual");
+    const boton = document.getElementById("mostrarPassword");
+
+    if (passwordVisible) {
+        password.textContent = "••••••••••";
+        boton.textContent = "Mostrar";
+        passwordVisible = false;
+    } else {
+        password.textContent = "Ejemplo123";
+        boton.textContent = "Ocultar";
+        passwordVisible = true;
+    }
+}
+</script>
+
+</body>
+</html>

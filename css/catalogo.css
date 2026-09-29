@@ -29,10 +29,6 @@ body {
     letter-spacing: 1px;
 }
 
-.activo {
-    background-color: #F5A623;
-    color: black !important;
-}
 
 .navbar-burger {
     color: #F5A623;
@@ -87,4 +83,168 @@ body {
         font-size: 2rem;
     }
 
+}
+
+
+.producto-encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.producto-nombre {
+    color: #F5A623;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.producto-descripcion {
+    color: white;
+    margin-top: 0.7rem;
+}
+
+.boton-corazon {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    transition: 0.2s;
+}
+
+.boton-corazon:hover {
+    color: #F5A623;
+    transform: scale(1.15);
+}
+
+.boton-corazon.activo {
+    color: #F5A623;
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-menu {
+    flex-grow: 1;
+    align-items: center;
+}
+
+.navbar-busqueda {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    padding: 0 2rem;
+}
+
+.navbar-busqueda .field {
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 0;
+}
+
+.barra-busqueda {
+    background-color: #303030;
+    border: 2px solid #F5A623;
+    color: white;
+    box-shadow: none;
+}
+
+.barra-busqueda::placeholder {
+    color: #b5b5b5;
+}
+
+.barra-busqueda:hover {
+    border-color: #F5A623;
+}
+
+.barra-busqueda:focus {
+    border-color: #F5A623;
+    box-shadow: 0 0 0 1px #F5A623;
+}
+
+.boton-busqueda {
+    background-color: #F5A623;
+    border: 2px solid #F5A623;
+    color: black;
+    font-weight: bold;
+}
+
+.boton-busqueda:hover {
+    background-color: black;
+    border-color: #F5A623;
+    color: #F5A623;
+}
+
+@media screen and (max-width: 1023px) {
+
+    .navbar .container {
+        display: block;
+    }
+
+    .navbar-menu {
+        background-color: black;
+    }
+
+    .navbar-busqueda {
+        padding: 1rem;
+    }
+
+    .navbar-busqueda .field {
+        max-width: 100%;
+    }
+}
+
+.producto-card {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.producto-card:hover {
+    transform: translateY(-4px);
+}
+
+.producto-encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.producto-nombre {
+    color: #F5A623;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.producto-descripcion {
+    color: white;
+    margin-top: 0.7rem;
+}
+
+.boton-corazon {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    transition: 0.2s;
+}
+
+.boton-corazon:hover {
+    color: #F5A623;
+    transform: scale(1.15);
+}
+
+.boton-corazon.activo {
+    color: #F5A623;
 }

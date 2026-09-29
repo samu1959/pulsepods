@@ -1,0 +1,109 @@
+html,
+body {
+    min-height: 100%;
+    background-color: #303030;
+}
+
+.navbar {
+    background-color: black;
+    border-bottom: 2px solid #F5A623;
+}
+
+.navbar-item {
+    color: #F5A623;
+}
+
+.navbar-item:hover {
+    background-color: #F5A623;
+    color: black;
+}
+
+.logo {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.5rem;
+    color: #F5A623 !important;
+}
+.section {
+    min-height: calc(100vh - 52px);
+    padding-top: 4rem;
+}
+
+.title {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #F5A623 !important;
+}
+
+.subtitulo {
+    color: white;
+}
+
+.notificaciones {
+    background-color: black;
+    border: 2px solid #F5A623;
+    border-radius: 14px;
+    padding: 2rem;
+}
+
+.notificacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.7rem 0;
+    border-bottom: 1px solid #F5A623;
+}
+
+.notificacion:first-child {
+    padding-top: 0;
+}
+
+.notificacion h2 {
+    color: #F5A623;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.3rem;
+}
+
+.notificacion p {
+    color: white;
+    margin-top: 0.4rem;
+}
+
+.checkbox {
+    color: white;
+    white-space: nowrap;
+}
+
+.checkbox input {
+    accent-color: #F5A623;
+}
+
+.botones {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.boton-principal {
+    background-color: #F5A623;
+    border: 2px solid #F5A623;
+    color: black;
+    font-weight: bold;
+}
+
+.boton-secundario {
+    background-color: transparent;
+    border: 2px solid #F5A623;
+    color: #F5A623;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .notificacion {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .botones {
+        flex-direction: column;
+    }
+}

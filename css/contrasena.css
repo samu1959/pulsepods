@@ -1,0 +1,115 @@
+html,
+body {
+    min-height: 100%;
+    background-color: #303030;
+}
+
+.navbar {
+    background-color: black;
+    border-bottom: 2px solid #F5A623;
+}
+
+.navbar-item {
+    color: #F5A623;
+}
+
+.navbar-item:hover {
+    background-color: #F5A623;
+    color: black;
+}
+
+.logo {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.5rem;
+    color: #F5A623 !important;
+}
+
+
+.section {
+    min-height: calc(100vh - 52px);
+    padding-top: 4rem;
+}
+
+.title {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #F5A623 !important;
+}
+
+.subtitulo {
+    color: white;
+}
+
+.password-box {
+    background-color: black;
+    border: 2px solid #F5A623;
+    border-radius: 14px;
+    padding: 2rem;
+}
+
+.password-actual {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+    font-size: 1.4rem;
+    padding: 1rem 0;
+}
+
+hr {
+    background-color: #F5A623;
+    height: 1px;
+    border: none;
+    margin: 2rem 0;
+}
+
+.label {
+    color: #F5A623 !important;
+}
+
+.input {
+    background-color: transparent;
+    border: 2px solid #F5A623;
+    color: white;
+}
+
+.input::placeholder {
+    color: #999;
+}
+
+.input:focus {
+    border-color: #F5A623;
+    box-shadow: 0 0 0 1px #F5A623;
+}
+
+.boton-pequeno,
+.boton-principal {
+    background-color: #F5A623;
+    border: 2px solid #F5A623;
+    color: black;
+    font-weight: bold;
+}
+
+.boton-secundario {
+    background-color: transparent;
+    border: 2px solid #F5A623;
+    color: #F5A623;
+    font-weight: bold;
+}
+
+.botones {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .password-actual {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .botones {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../css/notificaciones.css">
+    <title>PulsePods - Notificaciones</title>
+</head>
+<body>
+
+<nav class="navbar" role="navigation">
+    <div class="container">
+
+        <div class="navbar-brand">
+            <a class="navbar-item logo" href="../inicio/index.html">
+                PULSEPODS
+            </a>
+
+            <a role="button" class="navbar-burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+            <div class="navbar-end">
+                <a class="navbar-item" href="../inicio/index.html">Inicio</a>
+                <a class="navbar-item" href="../catalogo/catalogo.html">Catálogo</a>
+                <a class="navbar-item" href="favoritos.html">Favoritos</a>
+                <a class="navbar-item" href="mispedidos.html">Mis pedidos</a>
+                <a class="navbar-item" href="cuenta.html">Cuenta</a>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+<section class="section">
+    <div class="container">
+
+        <div class="has-text-centered mb-6">
+            <h1 class="title is-1">Notificaciones</h1>
+            <p class="subtitulo">
+                Decide qué información quieres recibir de PulsePods
+            </p>
+        </div>
+
+        <div class="columns is-centered">
+
+            <div class="column is-8">
+
+                <div class="box notificaciones">
+
+                    <div class="notificacion">
+
+                        <div>
+                            <h2>Estado de pedidos</h2>
+                            <p>
+                                Recibe información sobre el estado de tus pedidos.
+                            </p>
+                        </div>
+
+                        <label class="checkbox">
+                            <input type="checkbox" checked>
+                            Activar
+                        </label>
+
+                    </div>
+
+                    <div class="notificacion">
+
+                        <div>
+                            <h2>Nuevos productos</h2>
+                            <p>
+                                Recibe avisos cuando lleguen nuevos productos.
+                            </p>
+                        </div>
+
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            Activar
+                        </label>
+
+                    </div>
+
+                    <div class="notificacion">
+
+                        <div>
+                            <h2>Ofertas</h2>
+                            <p>
+                                Recibe información sobre ofertas y promociones.
+                            </p>
+                        </div>
+
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            Activar
+                        </label>
+
+                    </div>
+
+                    <div class="notificacion">
+
+                        <div>
+                            <h2>Favoritos</h2>
+                            <p>
+                                Recibe novedades relacionadas con tus productos favoritos.
+                            </p>
+                        </div>
+
+                        <label class="checkbox">
+                            <input type="checkbox" checked>
+                            Activar
+                        </label>
+
+                    </div>
+
+                    <div class="botones">
+
+                        <button class="button boton-principal">
+                            Guardar configuración
+                        </button>
+
+                        <a href="cuenta.html" class="button boton-secundario">
+                            Volver a cuenta
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<script>
+const burger = document.getElementById("burger");
+const menu = document.getElementById("menu");
+
+burger.addEventListener("click", () => {
+    burger.classList.toggle("is-active");
+    menu.classList.toggle("is-active");
+});
+</script>
+
+</body>
+</html>
