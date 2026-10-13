@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -7,50 +7,126 @@
     <title>PulsePods</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
     <link rel="stylesheet" href="../css/login.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
-<br><br><br>
-    <center>
-        <h1>Iniciar Sesion</h1>
-    </center>
+    <br><br><br>
 
+    <center>
+        <h1>Iniciar Sesión</h1>
+    </center>
 
     <div class="container">
         <br><br>
-        <form class="box">
+
+        <form class="box" id="formLogin">
             <div class="field">
                 <label class="label">Nombre</label>
                 <div class="control">
-                    <input class="input is-rounded" type="text" placeholder="ingrese su nombre" />
+                    <input class="input is-rounded" id="nombre" type="text" placeholder="Ingrese su nombre">
                 </div>
             </div>
-            
 
             <div class="field">
                 <label class="label">Email</label>
                 <div class="control">
-                    <input class="input is-rounded" type="email" placeholder="ingrese su email" />
+                    <input class="input is-rounded" id="email" type="email" placeholder="Ingrese su email">
                 </div>
             </div>
 
             <div class="field">
                 <label class="label">Contraseña</label>
                 <div class="control">
-                    <input class="input is-rounded" type="password" placeholder="Contraseña" />
+                    <input class="input is-rounded" id="contrasena" type="password" placeholder="Contraseña">
                 </div>
             </div>
 
             <div class="field mt-6">
-                  <div class="control">
-                    <button  onclick="window.location.href='../inicio/index.html'" class="button is-primary is-medium is-fullwidth" type="submit">
-                      Iniciar Sesion
+                <div class="control">
+                    <button class="button is-primary is-medium is-fullwidth" type="submit">
+                        Iniciar Sesión
                     </button>
-                  </div>
                 </div>
-              </form>
+            </div>
+        </form>
     </div>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        document.getElementById('formLogin').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nombre = document.getElementById('nombre').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const contrasena = document.getElementById('contrasena').value;
+
+            if (!nombre || !email || !contrasena) {
+                Swal.fire({
+                    title: '¡Campos incompletos!',
+                    text: 'Por favor, completa todos los campos.',
+                    icon: 'warning',
+                    confirmButtonText: 'Entendido',
+                    confirmButtonColor: '#F5A623',
+                    background: '#303030',
+                    color: '#F5A623'
+                });
+                return;
+            }
+
+            const soloLetras = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
+            if (!soloLetras.test(nombre)) {
+                Swal.fire({
+                    title: 'Nombre inválido',
+                    text: 'El nombre solo debe contener letras.',
+                    icon: 'error',
+                    confirmButtonText: 'Entendido',
+                    confirmButtonColor: '#F5A623',
+                    background: '#303030',
+                    color: '#F5A623'
+                });
+                return;
+            }
+
+            const formatoEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!formatoEmail.test(email)) {
+                Swal.fire({
+                    title: 'Correo inválido',
+                    text: 'Por favor, ingresa un correo electrónico válido.',
+                    icon: 'error',
+                    confirmButtonText: 'Entendido',
+                    confirmButtonColor: '#F5A623',
+                    background: '#303030',
+                    color: '#F5A623'
+                });
+                return;
+            }
+
+            if (contrasena.length < 6) {
+                Swal.fire({
+                    title: 'Contraseña débil',
+                    text: 'La contraseña debe tener al menos 6 caracteres.',
+                    icon: 'error',
+                    confirmButtonText: 'Entendido',
+                    confirmButtonColor: '#F5A623',
+                    background: '#303030',
+                    color: '#F5A623'
+                });
+                return;
+            }
+
+            Swal.fire({
+                title: '¡Bienvenido a PulsePods!',
+                text: 'Has iniciado sesión correctamente.',
+                icon: 'success',
+                confirmButtonText: 'Continuar',
+                confirmButtonColor: '#F5A623',
+                background: '#303030',
+                color: '#F5A623'
+            }).then(() => {
+                window.location.href = '../inicio/index.html';
+            });
+        });
+    </script>
 </body>
 
 </html>
