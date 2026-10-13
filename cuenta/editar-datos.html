@@ -81,6 +81,8 @@
                     <div class="control">
                       <input
                         class="input"
+                        name="nombre"
+                        id="nombre"
                         type="text"
                         placeholder="Tu nombre"
                       />
@@ -95,6 +97,8 @@
                     <div class="control">
                       <input
                         class="input"
+                        id="apellido"
+                        name="apellido"
                         type="text"
                         placeholder="Tu apellido"
                       />
@@ -110,6 +114,8 @@
                   <input
                     class="input"
                     type="email"
+                    id="email"
+                    name="email"
                     placeholder="correo@ejemplo.com"
                   />
                 </div>
@@ -122,6 +128,8 @@
                   <input
                     class="input"
                     type="tel"
+                    id="telefono"
+                    name="telefono"
                     placeholder="Número de teléfono"
                   />
                 </div>
@@ -131,7 +139,7 @@
                 <label class="label"> Dirección </label>
 
                 <div class="control">
-                  <input class="input" type="text" placeholder="Tu dirección" />
+                  <input class="input" type="text" id="direccion" name="direccion" placeholder="Tu dirección" />
                 </div>
               </div>
 
@@ -144,6 +152,8 @@
                       <input
                         class="input"
                         type="text"
+                        id="ciudad"
+                        name="ciudad"
                         placeholder="Tu ciudad"
                       />
                     </div>
@@ -158,6 +168,8 @@
                       <input
                         class="input"
                         type="text"
+                        id="departamento"
+                        name="departamento"
                         placeholder="Tu departamento"
                       />
                     </div>
@@ -172,6 +184,8 @@
                   <input
                     class="input"
                     type="text"
+                    id="codigoPostal"
+                    name="codigoPostal"
                     placeholder="Código postal"
                   />
                 </div>
@@ -184,6 +198,7 @@
                     <input
                       type="radio"
                       name="metodoEntrega"
+                      id="metodoEntrega"
                       value="contra-entrega"
                     />
                     Pago contra entrega
@@ -193,6 +208,7 @@
                     <input
                       type="radio"
                       name="metodoEntrega"
+                      id="metodoEntrega"
                       value="recoger-local"
                     />
                     Recoger en local
@@ -201,7 +217,9 @@
               </div>
 
               <div class="botones">
-                <button class="button boton-principal">Guardar cambios</button>
+                <button class="button boton-principal" type="submit">
+                  Guardar cambios
+                </button>
 
                 <a href="datos.html" class="button boton-secundario">
                   Cancelar
