@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PulsePods | Inicio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
     <link rel="stylesheet" href="../css/index.css">
-    <title>PulsePods - Inicio</title>
 </head>
-
-
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="container">
+    <nav class="navbar" role="navigation" aria-label="menú principal">
         <div class="navbar-brand">
             <a class="navbar-item logo" href="index.html">PULSEPODS</a>
 
-            <a role="button" class="navbar-burger" id="burger" aria-label="menu" aria-expanded="false">
+            <a role="button" class="navbar-burger" id="burger" aria-label="abrir menú" aria-expanded="false" aria-controls="menu">
+                <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -25,187 +23,178 @@
 
         <div class="navbar-menu" id="menu">
             <div class="navbar-end">
-                <a class="navbar-item" href="index.html">Inicio</a>
+                <a class="navbar-item activo" href="index.html">Inicio</a>
                 <a class="navbar-item" href="../catalogo/catalogo.html">Catálogo</a>
                 <a class="navbar-item" href="../cuenta/favoritos.html">Favoritos</a>
                 <a class="navbar-item" href="../cuenta/mispedidos.html">Mis pedidos</a>
-                 <a class="navbar-item" href="../cuenta/cuenta.html">Cuenta</a>
+                <a class="navbar-item" href="../cuenta/cuenta.html">Cuenta</a>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<section class="hero-principal">
-    <div class="container">
-        <div class="columns is-vcentered">
-            <div class="column is-6">
-                <p class="bienvenida">BIENVENIDO A PULSEPODS</p>
+    <section class="hero-principal">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-6">
+                    <p class="bienvenida">BIENVENIDO A PULSEPODS</p>
 
-                <h1 class="titulo-principal">
-                    SONIDO QUE<br>
-                    VA CONTIGO
-                </h1>
+                    <h1 class="titulo-principal">SONIDO QUE VA CONTIGO</h1>
 
-                <p class="descripcion">
-                    Descubre nuestra colección de audífonos inalámbricos,
-                    diseñados para acompañarte con comodidad, estilo y
-                    excelente calidad de sonido.
-                </p>
+                    <p class="descripcion">
+                        Descubre una nueva experiencia de sonido con nuestros audífonos.
+                        Calidad, comodidad y estilo en un solo lugar.
+                    </p>
 
-                <div class="botones-inicio">
-                    <a href="../catalogo/catalogo.html" class="button boton-principal">
-                        Ver catálogo
+                    <div class="botones-inicio">
+                        <a href="../catalogo/catalogo.html" class="button boton-principal">
+                            Explorar catálogo
+                        </a>
+
+                        <a href="#sobre-nosotros" class="button boton-secundario">
+                            Conócenos
+                        </a>
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                    <div class="imagen-principal carrusel" id="carruselPrincipal">
+                        <div class="carrusel-imagenes">
+                            <img src="imagenes/ChatGPT Image 1 ago 2026, 03_44_04 p.m..png" alt="AirPods Pro 3" class="imagen-carrusel activa">
+                            <img src="imagenes/ChatGPT Image 2 ago 2026, 03_43_59 p.m..png" alt="PulsePods Wireless" class="imagen-carrusel">
+                            <img src="imagenes/ChatGPT Image 3 ago 2026, 03_43_54 p.m..png" alt="PulsePods Air" class="imagen-carrusel">
+                        </div>
+
+                        <button type="button" class="carrusel-flecha anterior" id="imagenAnterior" aria-label="Imagen anterior">&#10094;</button>
+
+                        <button type="button" class="carrusel-flecha siguiente" id="imagenSiguiente" aria-label="Imagen siguiente">&#10095;</button>
+
+                        <div class="carrusel-indicadores">
+                            <button type="button" class="indicador activo" aria-label="Mostrar imagen 1"></button>
+                            <button type="button" class="indicador" aria-label="Mostrar imagen 2"></button>
+                            <button type="button" class="indicador" aria-label="Mostrar imagen 3"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sobre-nosotros" id="sobre-nosotros">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-6">
+                    <h2 class="title is-2">SOBRE PULSEPODS</h2>
+
+                    <p>
+                        En PulsePods creemos que la música forma parte de cada momento.
+                        Por eso buscamos ofrecer productos que combinen sonido, comodidad y estilo.
+                    </p>
+
+                    <p>
+                        Encuentra tus audífonos favoritos y lleva tu música contigo a donde vayas.
+                    </p>
+
+                    <a href="../catalogo/catalogo.html" class="button boton-principal mt-4">
+                        Explorar catálogo
                     </a>
-
-                    <a href="../cuenta/mispedidos.html" class="button boton-secundario">
-                        Mis pedidos
-                    </a>
                 </div>
-            </div>
 
-            <div class="column is-6">
-                <div class="imagen-principal">
-                    <img src="imagenes/ChatGPT Image 1 ago 2026, 03_44_04 p.m..png" alt="Audífonos PulsePods">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="productos-destacados">
-    <div class="container">
-        <div class="has-text-centered mb-6">
-            <h2 class="title is-2">Productos destacados</h2>
-            <p class="subtitulo">
-                Conoce algunos de nuestros productos disponibles
-            </p>
-        </div>
-
-        <div class="columns is-multiline">
-
-            <div class="column is-4">
-                <div class="producto-card">
-                    <figure class="producto-imagen">
-                        <img src="imagenes/ChatGPT Image 1 ago 2026, 03_44_04 p.m..png" alt="Producto PulsePods">
-                    </figure>
-
-                    <div class="producto-contenido">
-                        <h3>AirPods Pro 3</h3>
-                        <p>
-                            Audífonos inalámbricos con excelente calidad
-                            de sonido y conexión Bluetooth.
-                        </p>
-
-                        <a href="../catalogo/catalogo.html" class="button">
-                            Ver producto
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="column is-4">
-                <div class="producto-card">
-                    <figure class="producto-imagen">
-                        <img src="imagenes/ChatGPT Image 2 ago 2026, 03_43_59 p.m..png" alt="Producto PulsePods">
-                    </figure>
-
-                    <div class="producto-contenido">
-                        <h3>PulsePods Wireless</h3>
-                        <p>
-                            Diseño moderno, cómodo y perfecto para
-                            disfrutar de tu música todos los días.
-                        </p>
-
-                        <a href="../catalogo/catalogo.html" class="button">
-                            Ver producto
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="column is-4">
-                <div class="producto-card">
-                    <figure class="producto-imagen">
-                        <img src="imagenes/ChatGPT Image 3 ago 2026, 03_43_54 p.m..png" alt="Producto PulsePods">
-                    </figure>
-
-                    <div class="producto-contenido">
-                        <h3>PulsePods Air</h3>
-                        <p>
-                            Una opción práctica para escuchar música,
-                            ver contenido y realizar llamadas.
-                        </p>
-
-                        <a href="../catalogo/catalogo.html" class="button">
-                            Ver producto
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="has-text-centered mt-6">
-            <a href="catalogo/catalogo.html" class="button boton-catalogo">
-                Ver todos los productos
-            </a>
-        </div>
-    </div>
-</section>
-
-<section class="sobre-nosotros">
-    <div class="container">
-        <div class="columns is-vcentered">
-
-            <div class="column is-6">
-                <h2 class="title is-2">¿Por qué PulsePods?</h2>
-
-                <p>
-                    En PulsePods buscamos ofrecer productos tecnológicos
-                    que combinen diseño, comodidad y calidad de sonido.
-                    Nuestra tienda está pensada para que puedas encontrar
-                    fácilmente los audífonos que necesitas.
-                </p>
-
-                <p>
-                    Explora nuestro catálogo, guarda tus productos favoritos
-                    y agrega tus productos al pedido de una manera sencilla.
-                </p>
-            </div>
-
-            <div class="column is-6">
-                <div class="caracteristicas">
-                    <div class="caracteristica">
-                        <span>01</span>
-                        <div>
-                            <h3>Calidad</h3>
-                            <p>Productos pensados para disfrutar de un buen sonido.</p>
+                <div class="column is-6">
+                    <div class="caracteristicas">
+                        <div class="caracteristica">
+                            <span>01</span>
+                            <div>
+                                <h3>SONIDO</h3>
+                                <p>Disfruta cada detalle de tu música favorita.</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="caracteristica">
-                        <span>02</span>
-                        <div>
-                            <h3>Diseño</h3>
-                            <p>Estilos modernos para acompañar tu día a día.</p>
+                        <div class="caracteristica">
+                            <span>02</span>
+                            <div>
+                                <h3>COMODIDAD</h3>
+                                <p>Opciones para acompañarte durante el día.</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="caracteristica">
-                        <span>03</span>
-                        <div>
-                            <h3>Facilidad</h3>
-                            <p>Explora, guarda favoritos y crea tus pedidos fácilmente.</p>
+                        <div class="caracteristica">
+                            <span>03</span>
+                            <div>
+                                <h3>ESTILO</h3>
+                                <p>Diseños modernos que van contigo.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
+    <footer class="pie-pagina">
+        <div class="content has-text-centered">
+            <p>© 2026 PULSEPODS | Sonido que va contigo.</p>
+        </div>
+    </footer>
+
+    <script>
+        const burger = document.getElementById("burger");
+        const menu = document.getElementById("menu");
+
+        burger.addEventListener("click", function () {
+            burger.classList.toggle("is-active");
+            menu.classList.toggle("is-active");
+            burger.setAttribute(
+                "aria-expanded",
+                burger.classList.contains("is-active")
+            );
+        });
+
+        const carrusel = document.getElementById("carruselPrincipal");
+        const imagenes = carrusel.querySelectorAll(".imagen-carrusel");
+        const indicadores = carrusel.querySelectorAll(".indicador");
+        const anterior = document.getElementById("imagenAnterior");
+        const siguiente = document.getElementById("imagenSiguiente");
+
+        let indiceActual = 0;
+        let intervalo;
+
+        function mostrarImagen(nuevoIndice) {
+            imagenes[indiceActual].classList.remove("activa");
+            indicadores[indiceActual].classList.remove("activo");
+
+            indiceActual = (nuevoIndice + imagenes.length) % imagenes.length;
+
+            imagenes[indiceActual].classList.add("activa");
+            indicadores[indiceActual].classList.add("activo");
+        }
+
+        function iniciarCarrusel() {
+            clearInterval(intervalo);
+
+            intervalo = setInterval(function () {
+                mostrarImagen(indiceActual + 1);
+            }, 4000);
+        }
+
+        anterior.addEventListener("click", function () {
+            mostrarImagen(indiceActual - 1);
+            iniciarCarrusel();
+        });
+
+        siguiente.addEventListener("click", function () {
+            mostrarImagen(indiceActual + 1);
+            iniciarCarrusel();
+        });
+
+        indicadores.forEach(function (indicador, indice) {
+            indicador.addEventListener("click", function () {
+                mostrarImagen(indice);
+                iniciarCarrusel();
+            });
+        });
+
+        iniciarCarrusel();
+    </script>
 
 </body>
-
 </html>

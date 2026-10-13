@@ -269,9 +269,196 @@ body {
     .imagen-principal img {
         height: 300px;
     }
+}
 
-    .productos-destacados,
-    .sobre-nosotros {
-        padding: 4rem 1.5rem;
+.carrusel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carrusel-imagenes {
+    position: relative;
+    width: 100%;
+}
+
+.imagen-principal .imagen-carrusel {
+    display: none;
+    width: 100%;
+    height: 450px;
+    object-fit: contain;
+}
+
+.imagen-principal .imagen-carrusel.activa {
+    display: block;
+    animation: aparecerImagen 0.5s ease;
+}
+
+.carrusel {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.carrusel-imagenes {
+    position: relative;
+    width: 100%;
+}
+
+.imagen-principal .imagen-carrusel {
+    display: none;
+    width: 100%;
+    height: 450px;
+    object-fit: contain;
+}
+
+.imagen-principal .imagen-carrusel.activa {
+    display: block;
+    animation: aparecerImagen 0.5s ease;
+}
+
+.carrusel-flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 2px solid #F5A623;
+    border-radius: 50%;
+    background: #000;
+    color: #F5A623;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: none;
+}
+
+.carrusel-flecha:hover {
+    background: #F5A623;
+    color: #000;
+}
+
+.carrusel-flecha.anterior {
+    left: 15px;
+    right: auto;
+}
+
+.carrusel-flecha.siguiente {
+    right: 15px;
+    left: auto;
+}
+
+.carrusel-indicadores {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    z-index: 10;
+}
+
+.carrusel-indicadores .indicador {
+    width: 12px;
+    height: 12px;
+    min-width: 12px;
+    padding: 0;
+    border: 1px solid #F5A623;
+    border-radius: 50%;
+    background: #303030;
+    cursor: pointer;
+}
+
+.carrusel-indicadores .indicador.activo {
+    background: #F5A623;
+}
+
+@keyframes aparecerImagen {
+    from {
+        opacity: 0.3;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .imagen-principal .imagen-carrusel {
+        height: 300px;
+    }
+
+    .carrusel-flecha {
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+    }
+
+    .carrusel-flecha.anterior {
+        left: 8px;
+    }
+
+    .carrusel-flecha.siguiente {
+        right: 8px;
+    }
+}
+
+.carrusel-indicadores {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 5;
+}
+
+.carrusel-indicadores .indicador {
+    width: 11px;
+    height: 11px;
+    padding: 0;
+    border: 1px solid #F5A623;
+    border-radius: 50%;
+    background-color: #303030;
+    cursor: pointer;
+}
+
+.carrusel-indicadores .indicador.activo {
+    background-color: #F5A623;
+}
+
+@keyframes aparecerImagen {
+    from {
+        opacity: 0.3;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.pie-pagina {
+    padding: 1.5rem;
+    background-color: #000;
+    border-top: 2px solid #F5A623;
+}
+
+.pie-pagina p {
+    color: #F5A623;
+}
+
+@media screen and (max-width: 768px) {
+    .imagen-principal .imagen-carrusel {
+        height: 300px;
+    }
+
+    .carrusel-flecha {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
     }
 }

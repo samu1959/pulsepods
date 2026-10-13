@@ -125,6 +125,7 @@
                   </div>
 
                   <button
+                    type="button"
                     id="favorito"
                     class="boton-corazon"
                     aria-label="Agregar a favoritos"
@@ -180,6 +181,61 @@
         burger.classList.toggle("is-active");
         menu.classList.toggle("is-active");
       });
+
+      const productoActual = {
+        id: "airpods-pro-3",
+        nombre: "AirPods Pro 3",
+        precio: 84900,
+        imagen: "",
+        enlace: "producto.html",
+      };
+
+      function obtenerFavoritos() {
+        try {
+          return JSON.parse(localStorage.getItem("favoritos")) || [];
+        } catch {
+          return [];
+        }
+      }
+
+      function comprobarFavorito() {
+        const favoritos = obtenerFavoritos();
+
+        const guardado = favoritos.some(
+          (producto) => producto.id === productoActual.id,
+        );
+
+        const boton = document.getElementById("favorito");
+
+        boton.classList.toggle("activo", guardado);
+
+        boton.setAttribute("aria-pressed", guardado);
+
+        boton.setAttribute(
+          "aria-label",
+          guardado ? "Quitar de favoritos" : "Agregar a favoritos",
+        );
+      }
+
+      function guardarFavorito() {
+        let favoritos = obtenerFavoritos();
+
+        const indice = favoritos.findIndex(
+          (producto) => producto.id === productoActual.id,
+        );
+
+        if (indice !== -1) {
+          favoritos.splice(indice, 1);
+        } else {
+          favoritos.push(productoActual);
+        }
+
+        localStorage.setItem("favoritos", JSON.stringify(favoritos));
+
+        comprobarFavorito();
+      }
+
+      comprobarFavorito();
     </script>
   </body>
 </html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PulsePods - Realizar pedido</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../css/realizar-pedido.css">
+</head>
+<body>
+
+    <nav class="navbar barra-navegacion" role="navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item logo" href="../inicio/index.html">
+                PULSEPODS
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="Abrir menú" aria-expanded="false" data-target="menuNavegacion">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div class="navbar-menu" id="menuNavegacion">
+            <div class="navbar-end">
+                <a class="navbar-item enlace-nav" href="../inicio/index.html">Inicio</a>
+                <a class="navbar-item enlace-nav" href="../catalogo/catalogo.html">Catálogo</a>
+                <a class="navbar-item enlace-nav" href="favoritos.html">Favoritos</a>
+                <a class="navbar-item enlace-nav" href="mispedidos.html">Mis pedidos</a>
+                <a class="navbar-item enlace-nav" href="cuenta.html">Cuenta</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container contenido">
+
+        <header class="encabezado">
+            <a href="../catalogo/catalogo.html" class="volver">← Seguir comprando</a>
+            <h1 class="titulo">REALIZAR PEDIDO</h1>
+            <p class="subtitulo">Revisa tu compra y completa los datos para confirmar tu pedido.</p>
+        </header>
+
+        <form id="formPedido">
+
+            <div class="columns is-variable is-5">
+
+                <div class="column is-7">
+
+                    <section class="box panel-pedido">
+                        <h2 class="titulo-seccion">1. Productos de tu pedido</h2>
+
+                        <div class="producto-pedido">
+
+                            <div class="imagen-producto">
+                                <span>PP</span>
+                            </div>
+
+                            <div class="informacion-producto">
+                                <h3>AirPods Pro 3</h3>
+                                <p class="precio-unitario">$899.900 COP</p>
+
+                                <div class="control-cantidad">
+                                    <label for="cantidad">Cantidad:</label>
+
+                                    <div class="botones-cantidad">
+                                        <button type="button" class="boton-cantidad" id="restar">−</button>
+                                        <input class="input cantidad-input" type="number" id="cantidad" name="cantidad" min="1" max="99" value="1" required>
+                                        <button type="button" class="boton-cantidad" id="sumar">+</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="precio-producto" id="subtotalProducto">
+                                $899.900
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <section class="box panel-pedido">
+                        <h2 class="titulo-seccion">2. Datos del comprador</h2>
+
+                        <div class="field">
+                            <label class="label" for="nombre">Nombre completo</label>
+                            <div class="control">
+                                <input class="input" id="nombre" name="nombre" type="text" placeholder="Ingresa tu nombre completo" autocomplete="name" required>
+                            </div>
+                        </div>
+
+                        <div class="columns">
+
+                            <div class="column">
+                                <div class="field">
+                                    <label class="label" for="correo">Correo electrónico</label>
+                                    <div class="control">
+                                        <input class="input" id="correo" name="correo" type="email" placeholder="correo@ejemplo.com" autocomplete="email" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="column">
+                                <div class="field">
+                                    <label class="label" for="telefono">Teléfono</label>
+                                    <div class="control">
+                                        <input class="input" id="telefono" name="telefono" type="tel" placeholder="Número de contacto" autocomplete="tel" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <section class="box panel-pedido">
+                        <h2 class="titulo-seccion">3. Método de entrega</h2>
+
+                        <div class="opciones-entrega">
+
+                            <label class="opcion">
+                                <input type="radio" name="entrega" value="domicilio" checked>
+                                <span>
+                                    <strong>Entrega a domicilio</strong>
+                                    <small>Recibe tu pedido en la dirección indicada.</small>
+                                </span>
+                            </label>
+
+                            <label class="opcion">
+                                <input type="radio" name="entrega" value="recoger">
+                                <span>
+                                    <strong>Recoger en local</strong>
+                                    <small>Recoge tu pedido en nuestro punto de recogida.</small>
+                                </span>
+                            </label>
+
+                        </div>
+
+                        <div id="datosDomicilio">
+
+                            <div class="field">
+                                <label class="label" for="direccion">Dirección de entrega</label>
+                                <div class="control">
+                                    <input class="input" id="direccion" name="direccion" type="text" placeholder="Calle, carrera, número y complemento" autocomplete="street-address" required>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label" for="ciudad">Ciudad</label>
+                                <div class="control">
+                                    <input class="input" id="ciudad" name="ciudad" type="text" placeholder="Ingresa tu ciudad" required>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label" for="indicaciones">Indicaciones adicionales</label>
+                                <div class="control">
+                                    <textarea class="textarea" id="indicaciones" name="indicaciones" placeholder="Barrio, apartamento o referencias (opcional)" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div id="datosRecogida" hidden>
+                            <div class="aviso-recogida">
+                                <strong>Recogida en local</strong>
+                                <p>La dirección y los horarios del punto de recogida deberán confirmarse con la tienda.</p>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <section class="box panel-pedido">
+                        <h2 class="titulo-seccion">4. Método de pago</h2>
+
+                        <div class="opciones-entrega">
+
+                            <label class="opcion">
+                                <input type="radio" name="pago" value="contra_entrega" checked>
+                                <span>
+                                    <strong>Pago contra entrega</strong>
+                                    <small>Paga cuando recibas tu pedido, sujeto a disponibilidad.</small>
+                                </span>
+                            </label>
+
+                            <label class="opcion">
+                                <input type="radio" name="pago" value="pendiente">
+                                <span>
+                                    <strong>Otro método de pago</strong>
+                                    <small>Disponible cuando la tienda configure otras opciones.</small>
+                                </span>
+                            </label>
+
+                        </div>
+                    </section>
+
+                </div>
+
+                <div class="column is-5">
+
+                    <section class="box panel-pedido resumen">
+
+                        <h2 class="titulo-seccion">Resumen del pedido</h2>
+
+                        <div class="fila-resumen">
+                            <span>Productos</span>
+                            <span id="cantidadResumen">1</span>
+                        </div>
+
+                        <div class="fila-resumen">
+                            <span>Subtotal</span>
+                            <span id="subtotalResumen">$899.900</span>
+                        </div>
+
+                        <div class="fila-resumen">
+                            <span>Envío</span>
+                            <span id="envioResumen">Por confirmar</span>
+                        </div>
+
+                        <div class="separador"></div>
+
+                        <div class="fila-resumen total">
+                            <span>Total parcial</span>
+                            <span id="totalResumen">$899.900</span>
+                        </div>
+
+                        <p class="nota-resumen">
+                            El valor del envío y el total definitivo se confirmarán según el método de entrega.
+                        </p>
+
+                        <button type="submit" class="button boton-principal is-fullwidth">
+                            Confirmar pedido
+                        </button>
+
+                        <a href="../catalogo/catalogo.html" class="button boton-secundario is-fullwidth">
+                            Seguir comprando
+                        </a>
+
+                        <p id="mensajePedido" class="mensaje-pedido" role="status" hidden></p>
+
+                    </section>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </main>
+
+    <footer class="pie-pagina">
+        <p>© 2026 PULSEPODS · Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="../js/realizar-pedido.js"></script>
+
+</body>
+</html>
