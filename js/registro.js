@@ -1,8 +1,6 @@
 const formularioRegistro = document.getElementById("formRegistro");
 
 formularioRegistro.addEventListener("submit", function (evento) {
-    evento.preventDefault();
-
     const campos = formularioRegistro.elements;
     const nombre = campos.nombre.value.trim();
     const correo = campos.email.value.trim().toLowerCase();

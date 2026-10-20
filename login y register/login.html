@@ -113,7 +113,14 @@
                 });
                 return;
             }
-
+            
+           fetch('../php/login.php', {
+    method: 'POST',
+    body: new FormData(document.getElementById('formLogin'))
+})
+    .then(res => res.text())
+    .then(respuesta => {
+        if (respuesta.trim() === 'ok') {
             Swal.fire({
                 title: '¡Bienvenido a PulsePods!',
                 text: 'Has iniciado sesión correctamente.',
@@ -125,7 +132,19 @@
             }).then(() => {
                 window.location.href = '../inicio/index.html';
             });
-        });
+        } else {
+            Swal.fire({
+                title: 'Datos incorrectos',
+                text: 'Email o contraseña incorrectos.',
+                icon: 'error',
+                confirmButtonText: 'Entendido',
+                confirmButtonColor: '#F5A623',
+                background: '#303030',
+                color: '#F5A623'
+            });
+        }
+    });
+}
     </script>
 </body>
 

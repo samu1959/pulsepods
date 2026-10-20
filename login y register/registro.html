@@ -10,51 +10,82 @@
     <link rel="stylesheet" href="../css/registro.css" />
     <title>Registrarse</title>
   </head>
-  
+
   <body>
-    <br><br><br>
+    <br /><br /><br />
     <center><h1>Registrarse</h1></center>
     <section class="section">
       <div class="container">
         <div class="columns is-centered">
           <div class="column is-5-desktop is-7-tablet is-12-mobile">
             <div class="box registro-box">
-              <div class="has-text-centered mb-6">
-              </div>
-              
-              <form id="registroForm">
+              <div class="has-text-centered mb-6"></div>
+
+              <form
+                id="registroForm"
+                action="../php/registro.php"
+                method="POST"
+              >
                 <div class="field">
                   <label class="label"> Nombre </label>
                   <div class="control">
-                    <input class="input is-medium" type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" />
+                    <input
+                      class="input is-medium"
+                      type="text"
+                      id="nombre"
+                      name="nombre"
+                      placeholder="Ingrese su nombre"
+                    />
                   </div>
                 </div>
 
                 <div class="field">
                   <label class="label"> Correo electrónico </label>
                   <div class="control">
-                    <input class="input is-medium" type="email" name="email" placeholder="Ingrese su email" />
+                    <input
+                      class="input is-medium"
+                      type="email"
+                      name="email"
+                      placeholder="Ingrese su email"
+                    />
                   </div>
                 </div>
 
                 <div class="field">
                   <label class="label"> Contraseña </label>
                   <div class="control">
-                    <input class="input is-medium" type="password" id="contrasena" name="contrasena" placeholder="Contraseña (mínimo 6 caracteres)" />
+                    <input
+                      class="input is-medium"
+                      type="password"
+                      id="contrasena"
+                      name="contrasena"
+                      placeholder="Contraseña (mínimo 6 caracteres)"
+                    />
                   </div>
                 </div>
 
                 <div class="field">
                   <label class="label"> Fecha de nacimiento </label>
                   <div class="control">
-                    <input class="input is-medium" type="date" id="fecha" name="fecha" />
+                    <input
+                      class="input is-medium"
+                      type="date"
+                      id="fecha"
+                      name="fecha"
+                    />
                   </div>
                 </div>
 
                 <div class="field">
                   <label class="label"> Teléfono </label>
                   <div class="control">
-                    <input class="input is-medium" type="tel" id="telefono" name="telefono" placeholder="Ingrese su teléfono (solo números)" />
+                    <input
+                      class="input is-medium"
+                      type="tel"
+                      id="telefono"
+                      name="telefono"
+                      placeholder="Ingrese su teléfono (solo números)"
+                    />
                   </div>
                 </div>
 
@@ -85,7 +116,9 @@
                         <option value="magdalena">Magdalena</option>
                         <option value="meta">Meta</option>
                         <option value="narino">Nariño</option>
-                        <option value="norte_de_santander">Norte de Santander</option>
+                        <option value="norte_de_santander">
+                          Norte de Santander
+                        </option>
                         <option value="putumayo">Putumayo</option>
                         <option value="quindio">Quindío</option>
                         <option value="risaralda">Risaralda</option>
@@ -132,12 +165,16 @@
                         <option value="chinchina">Chinchiná</option>
                         <option value="neira">Neira</option>
                         <option value="florencia">Florencia</option>
-                        <option value="san_vicente">San Vicente del Caguán</option>
+                        <option value="san_vicente">
+                          San Vicente del Caguán
+                        </option>
                         <option value="yopal">Yopal</option>
                         <option value="aguazul">Aguazul</option>
                         <option value="villanueva">Villanueva</option>
                         <option value="popayan">Popayán</option>
-                        <option value="santander_de_quilichao">Santander de Quilichao</option>
+                        <option value="santander_de_quilichao">
+                          Santander de Quilichao
+                        </option>
                         <option value="puerto_tejada">Puerto Tejada</option>
                         <option value="valledupar">Valledupar</option>
                         <option value="aguachica">Aguachica</option>
@@ -194,9 +231,13 @@
                   <div class="control">
                     <div class="select is-medium is-fullwidth">
                       <select name="tipo_documento">
-                        <option value="">Seleccione un tipo de documento</option>
+                        <option value="">
+                          Seleccione un tipo de documento
+                        </option>
                         <option value="cedula">Cédula de ciudadanía</option>
-                        <option value="extranjeria">Cédula de extranjería</option>
+                        <option value="extranjeria">
+                          Cédula de extranjería
+                        </option>
                         <option value="tarjeta">Tarjeta de identidad</option>
                         <option value="otro">Otro</option>
                       </select>
@@ -207,13 +248,22 @@
                 <div class="field">
                   <label class="label"> Número de documento </label>
                   <div class="control">
-                    <input class="input is-medium" type="text" name="documento" id="documento" placeholder="Ingrese su número de documento (solo números)" />
+                    <input
+                      class="input is-medium"
+                      type="text"
+                      name="documento"
+                      id="documento"
+                      placeholder="Ingrese su número de documento (solo números)"
+                    />
                   </div>
                 </div>
 
                 <div class="field mt-6">
                   <div class="control">
-                    <button class="button is-primary is-medium is-fullwidth" type="submit">
+                    <button
+                      class="button is-primary is-medium is-fullwidth"
+                      type="submit"
+                    >
                       Registrar
                     </button>
                   </div>
@@ -229,97 +279,6 @@
       </div>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
-    <script>
-      document.getElementById('registroForm').addEventListener('submit', function(e) {
-        e.preventDefault();
 
-        const nombre = document.querySelector('input[name="nombre"]').value.trim();
-        const email = document.querySelector('input[name="email"]').value.trim();
-        const password = document.querySelector('input[name="password"]').value.trim();
-        const fecha = document.querySelector('input[name="fecha"]').value.trim();
-        const telefono = document.querySelector('input[name="telefono"]').value.trim();
-        const departamento = document.querySelector('select[name="departamento"]').value;
-        const ciudad = document.querySelector('select[name="ciudad"]').value;
-        const tipoDoc = document.querySelector('select[name="tipo_documento"]').value;
-        const documento = document.querySelector('input[name="documento"]').value.trim();
-
-        if (!nombre || !email || !password || !fecha || !telefono || !departamento || !ciudad || !tipoDoc || !documento) {
-          Swal.fire({
-            icon: 'warning',
-            title: 'Campos incompletos',
-            text: 'Por favor, completa todos los campos obligatorios.',
-            confirmButtonColor: '#363636'
-          });
-          return;
-        }
-
-        const soloLetras = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
-        if (!soloLetras.test(nombre)) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Nombre inválido',
-            text: 'El nombre solo debe contener letras.',
-            confirmButtonColor: '#363636'
-          });
-          return;
-        }
-
-        const formatoEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!formatoEmail.test(email)) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Correo inválido',
-            text: 'Por favor, ingresa un correo electrónico válido.',
-            confirmButtonColor: '#363636'
-          });
-          return;
-        }
-
-        if (password.length < 6) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Contraseña débil',
-            text: 'La contraseña debe tener al menos 6 caracteres.',
-            confirmButtonColor: '#363636'
-          });
-          return;
-        }
-
-        const soloNumeros = /^[0-9]+$/;
-        if (!soloNumeros.test(telefono)) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Teléfono inválido',
-            text: 'El teléfono solo debe contener números.',
-            confirmButtonColor: '#363636'
-          });
-          return;
-        }
-
-        if (!soloNumeros.test(documento)) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Documento inválido',
-            text: 'El número de documento solo debe contener números.',
-            confirmButtonColor: '#363636'
-          });
-          return;
-        }
-
-        Swal.fire({
-          icon: 'success',
-          title: '¡Registro exitoso!',
-          text: 'Tu cuenta ha sido creada correctamente.',
-          confirmButtonText: 'Continuar',
-          confirmButtonColor: '#00d1b2'
-        }).then((result) => {
-          if (result.isConfirmed) {
-            window.location.href = '../inicio/index.html';
-          }
-        });
-      });
-    </script>
   </body>
 </html>
