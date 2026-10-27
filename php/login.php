@@ -13,4 +13,15 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
+
+session_start();
+
+
+if (isset($_SESSION['usuario'])) {
+    echo "La variable existe y su valor es: " . $_SESSION['usuario'];
+} else {
+    echo "La variable de sesión 'usuario' no está definida.";
+}
+?>
+
 $conn->close(); 
