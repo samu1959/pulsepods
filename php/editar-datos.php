@@ -10,6 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $documento = $_POST["documento"];
     $direccion = $_POST["direccion"];
 
+
+    SELECT * FROM `usuario` WHERE 1;
+    
 UPDATE 'usuario'  SET  `nombre`='$nombre' ,  `correo`='$correo', `metodoEntrega`='metodoEntrega' , `direccion` = '$direccion' WHERE  id_usuario = 1;    if ($conn->query($sql) === TRUE) {
         echo "datos  actualizados exitosamente.";
         header("Location: ../login_registro/login.html");
