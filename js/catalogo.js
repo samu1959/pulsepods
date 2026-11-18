@@ -3,70 +3,40 @@ const cajaBusqueda = document.getElementById("buscar");
 
 function mostrar() {
     const texto = cajaBusqueda.value.toLowerCase();
-    const productos = leer("productos", []);
+    const tarjetas = lista.querySelectorAll(".column");
     let encontrados = 0;
 
-    lista.innerHTML = "";
+    tarjetas.forEach(function(columna) {
+        const tarjeta = columna.querySelector(".producto-card");
 
-    for (let i = 0; i < productos.length; i++) {
-        const p = productos[i];
+        if (!tarjeta) return;
 
-        if (p.estado === "oculto") {
-            continue;
+        const nombre = tarjeta.dataset.nombre.toLowerCase();
+        const coincide = nombre.includes(texto);
+
+        columna.style.display = coincide ? "" : "none";
+
+        if (coincide) {
+            encontrados++;
         }
+    });
 
-        if (p.nombre.toLowerCase().indexOf(texto) === -1) {
-            continue;
-        }
-
-        let claseCorazon = "boton-corazon";
-        if (esFavorito(p.id)) {
-            claseCorazon = "boton-corazon activo";
-        }
-
-        let textoPrecio = dinero(p.precio);
-        if (p.estado === "agotado") {
-            textoPrecio = textoPrecio + " - Agotado";
-        }
-
-        lista.innerHTML += `
-            <div class="column is-4">
-                <div class="card producto-card" onclick="abrirProducto(${p.id})">
-                    <div class="card-image">
-                        <figure class="image is-4by5">
-                            <img src="${p.imagen}" alt="${p.nombre}">
-                        </figure>
-                    </div>
-                    <div class="card-content">
-                        <div class="producto-encabezado">
-                            <h2 class="producto-nombre">${p.nombre}</h2>
-                            <button class="${claseCorazon}" onclick="favorito(event, ${p.id})">♥</button>
-                        </div>
-                        <p class="producto-descripcion">${textoPrecio}</p>
-                    </div>
-                </div>
-            </div>
-        `;
-
-        encontrados++;
-    }
+    let mensaje = document.getElementById("mensajeSinProductos");
 
     if (encontrados === 0) {
-        lista.innerHTML = '<p class="subtitle" style="color: white;">No se encontraron productos</p>';
+        if (!mensaje) {
+            mensaje = document.createElement("p");
+            mensaje.id = "mensajeSinProductos";
+            mensaje.className = "subtitle";
+            mensaje.style.color = "white";
+            mensaje.textContent = "No se encontraron productos";
+            lista.appendChild(mensaje);
+        }
+    } else if (mensaje) {
+        mensaje.remove();
     }
 }
 
 function abrirProducto(id) {
-    window.location.href = "producto.html?id=" + id;
+    window.location.href = "producto.php?id=" + encodeURIComponent(id);
 }
-
-function favorito(evento, id) {
-    evento.stopPropagation();
-    cambiarFavorito(id);
-    mostrar();
-}
-
-cajaBusqueda.addEventListener("input", mostrar);
-document.getElementById("botonBuscar").addEventListener("click", mostrar);
-
-mostrar();

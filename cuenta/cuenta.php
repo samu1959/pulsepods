@@ -31,8 +31,8 @@ $correo   = $logueado ? htmlspecialchars($_SESSION["correo"] ?? "", ENT_QUOTES, 
         <div class="navbar-menu" id="menu">
             <div class="navbar-end">
                 <a class="navbar-item" href="../inicio/index.html">Inicio</a>
-                <a class="navbar-item" href="../catalogo/catalogo.html">Catálogo</a>
-                <a class="navbar-item" href="favoritos.php">Favoritos</a>
+                <a class="navbar-item" href="../catalogo/catalogo.php">Catálogo</a>
+                <a class="navbar-item" href="favoritos.html">Favoritos</a>
                 <a class="navbar-item" href="mispedidos.php">Mis pedidos</a>
                 <a class="navbar-item is-active" href="cuenta.php">Cuenta</a>
             </div>
