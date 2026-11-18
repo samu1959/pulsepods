@@ -1,20 +1,24 @@
 <?php
 require("conexion.php");
 
+session_start();   
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST["nombre"];
     $email = $_POST["email"];
     $contrasena = $_POST["contrasena"];
 }
 
-$sql = "INSERT INTO usuarios (nombre, email, contrasena) VALUES ('$nombre', '$email', '$contrasena')";
-if ($conn->query($sql) === TRUE) {
-    echo "Usuario registrado exitosamente.";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
+$sql = "SELECT * FROM usuario WHERE correo = '$email' AND contrasena = '$contrasena'";
+$result = $conn->query($sql);
 
-session_start();
+if ($result->num_rows > 0) {
+    $_SESSION['usuario'] = $email;
+    echo "Inicio de sesión exitoso.";
+    header("Location: ../inicio/index.html");
+} else {
+    echo "Credenciales incorrectas.";
+}
 
 
 if (isset($_SESSION['usuario'])) {

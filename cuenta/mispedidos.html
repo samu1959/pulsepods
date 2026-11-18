@@ -15,9 +15,7 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item logo" href="../inicio/index.html">
-            PULSEPODS
-          </a>
+          <a class="navbar-item logo" href="../inicio/index.html">PULSEPODS</a>
 
           <a
             role="button"
@@ -34,17 +32,11 @@
 
         <div class="navbar-menu" id="menu">
           <div class="navbar-end">
-            <a class="navbar-item" href="../inicio/index.html"> Inicio </a>
-
-            <a class="navbar-item" href="../catalogo/catalogo.html">
-              Catálogo
-            </a>
-
-            <a class="navbar-item" href="favoritos.html"> Favoritos </a>
-
-            <a class="navbar-item" href="mispedidos.html"> Mis pedidos </a>
-
-            <a class="navbar-item" href="cuenta.html"> Cuenta </a>
+            <a class="navbar-item" href="../inicio/index.html">Inicio</a>
+            <a class="navbar-item" href="../catalogo/catalogo.html">Catálogo</a>
+            <a class="navbar-item" href="favoritos.html">Favoritos</a>
+            <a class="navbar-item" href="mispedidos.html">Mis pedidos</a>
+            <a class="navbar-item" href="cuenta.php">Cuenta</a>
           </div>
         </div>
       </div>
@@ -54,26 +46,18 @@
       <div class="container">
         <div class="has-text-centered mb-6">
           <h1 class="title is-1">Mis pedidos</h1>
-
-          <p class="subtitulo">
-            Consulta los productos y detalles de tu pedido
-          </p>
+          <p class="subtitulo">Consulta los productos y detalles de tu pedido</p>
         </div>
 
-        <div id="vacio" class="box pedido-vacio">
+        <div id="vacio" class="box pedido-vacio" style="display: none">
           <h2>No tienes productos en tu pedido</h2>
-
           <p>Agrega productos desde nuestro catálogo.</p>
-
-          <a
-            href="../catalogo/catalogo.html"
-            class="button boton-principal mt-4"
-          >
+          <a href="../catalogo/catalogo.html" class="button boton-principal mt-4">
             Ir al catálogo
           </a>
         </div>
 
-        <div id="contenidoPedido">
+        <div id="contenidoPedido" style="display: none">
           <div class="columns is-variable is-5">
             <div class="column is-8">
               <div id="pedidos"></div>
@@ -85,26 +69,20 @@
 
                 <div class="resumen-fila">
                   <span>Productos</span>
-
-                  <span id="totalProductos"> 0 </span>
+                  <span id="totalProductos">0</span>
                 </div>
 
                 <div class="resumen-fila">
                   <span>Envío</span>
-
-                  <span> Gratis </span>
+                  <span>Gratis</span>
                 </div>
 
                 <div class="resumen-total">
                   <span>Total</span>
-
-                  <span id="totalPedido"> $0 </span>
+                  <span id="totalPedido">$0</span>
                 </div>
 
-                <a
-                  href="realizar-pedido.html"
-                  class="button boton-principal mt-4"
-                >
+                <a href="realizar-pedido.html" class="button boton-principal mt-4">
                   Realizar pedido
                 </a>
               </div>
@@ -113,41 +91,33 @@
                 <h2 class="title is-3">Detalles del pedido</h2>
 
                 <div class="detalle">
-                  <span class="detalle-titulo"> Número de pedido </span>
-
-                  <span class="detalle-valor"> #PP-0001 </span>
+                  <span class="detalle-titulo">Número de pedido</span>
+                  <span class="detalle-valor">#PP-0001</span>
                 </div>
 
                 <div class="detalle">
-                  <span class="detalle-titulo"> Estado </span>
-
-                  <span class="estado"> Pendiente </span>
+                  <span class="detalle-titulo">Estado</span>
+                  <span class="estado">Pendiente</span>
                 </div>
 
                 <div class="detalle">
-                  <span class="detalle-titulo"> Fecha </span>
-
-                  <span class="detalle-valor" id="fechaPedido"> -- </span>
+                  <span class="detalle-titulo">Fecha</span>
+                  <span class="detalle-valor" id="fechaPedido">--</span>
                 </div>
 
                 <div class="detalle">
-                  <span class="detalle-titulo"> Método de pago </span>
-
-                  <span class="detalle-valor"> Por seleccionar </span>
+                  <span class="detalle-titulo">Método de pago</span>
+                  <span class="detalle-valor">Por seleccionar</span>
                 </div>
 
                 <div class="detalle">
-                  <span class="detalle-titulo"> Tipo de envío </span>
-
-                  <span class="detalle-valor"> Envío estándar </span>
+                  <span class="detalle-titulo">Tipo de envío</span>
+                  <span class="detalle-valor">Envío estándar</span>
                 </div>
 
                 <div class="detalle detalle-direccion">
-                  <span class="detalle-titulo"> Dirección de entrega </span>
-
-                  <span class="detalle-valor">
-                    Agrega una dirección en tu cuenta
-                  </span>
+                  <span class="detalle-titulo">Dirección de entrega</span>
+                  <span class="detalle-valor">Agrega una dirección en tu cuenta</span>
                 </div>
               </div>
             </div>
@@ -155,5 +125,92 @@
         </div>
       </div>
     </section>
+
+    <script>
+      const burger = document.getElementById("burger");
+      const menu = document.getElementById("menu");
+      const vacio = document.getElementById("vacio");
+      const contenido = document.getElementById("contenidoPedido");
+      const listaPedidos = document.getElementById("pedidos");
+
+      burger.addEventListener("click", () => {
+        burger.classList.toggle("is-active");
+        menu.classList.toggle("is-active");
+      });
+
+      function obtenerPedidos() {
+        try {
+          return JSON.parse(localStorage.getItem("pedidos")) || [];
+        } catch {
+          return [];
+        }
+      }
+
+      function formatoPrecio(valor) {
+        return "$" + Number(valor).toLocaleString("es-CO");
+      }
+
+      function quitarPedido(id) {
+        const pedidos = obtenerPedidos().filter((p) => p.id !== id);
+        localStorage.setItem("pedidos", JSON.stringify(pedidos));
+        mostrarPedidos();
+      }
+
+      function mostrarPedidos() {
+        const pedidos = obtenerPedidos();
+
+        if (pedidos.length === 0) {
+          vacio.style.display = "block";
+          contenido.style.display = "none";
+          return;
+        }
+
+        vacio.style.display = "none";
+        contenido.style.display = "block";
+
+        let totalProductos = 0;
+        let totalPedido = 0;
+        let html = "";
+
+        pedidos.forEach((p) => {
+          const subtotal = p.precio * p.cantidad;
+          totalProductos += p.cantidad;
+          totalPedido += subtotal;
+
+          html += `
+            <div class="box">
+              <div class="columns is-vcentered is-mobile">
+                <div class="column is-3">
+                  <figure class="image">
+                    <img src="${p.imagen}" alt="${p.nombre}" />
+                  </figure>
+                </div>
+
+                <div class="column">
+                  <h2 class="title is-5 mb-2">${p.nombre}</h2>
+                  <p>Cantidad: ${p.cantidad}</p>
+                  <p>Precio unitario: ${formatoPrecio(p.precio)}</p>
+                  <p><strong>Subtotal: ${formatoPrecio(subtotal)}</strong></p>
+                </div>
+
+                <div class="column is-narrow">
+                  <button class="button is-small" onclick="quitarPedido('${p.id}')">
+                    Quitar
+                  </button>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+
+        listaPedidos.innerHTML = html;
+        document.getElementById("totalProductos").textContent = totalProductos;
+        document.getElementById("totalPedido").textContent = formatoPrecio(totalPedido);
+        document.getElementById("fechaPedido").textContent =
+          new Date().toLocaleDateString("es-CO");
+      }
+
+      mostrarPedidos();
+    </script>
   </body>
 </html>

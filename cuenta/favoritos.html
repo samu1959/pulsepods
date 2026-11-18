@@ -1,124 +1,134 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
-    <link rel="stylesheet" href="../css/favoritos.css">
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="../css/catalogo.css" />
     <title>PulsePods - Favoritos</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item logo" href="../inicio/index.html">PULSEPODS</a>
 
-    <nav class="navbar">
-
-        <div class="container">
-
-            <div class="navbar-brand">
-
-                <a class="navbar-item logo" href="index.html">
-                    PULSEPODS
-                </a>
-
-                <a
-                    role="button"
-                    class="navbar-burger"
-                    id="burger"
-                >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </a>
-
-            </div>
-
-            <div class="navbar-menu" id="menu">
-
-                <div class="navbar-end">
-
-                    <a class="navbar-item" href="../inicio/index.html">
-                        Inicio
-                    </a>
-
-                    <a class="navbar-item" href="../catalogo/catalogo.html">
-                        Catálogo
-                    </a>
-
-                    <a class="navbar-item" href="favoritos.html">
-                        Favoritos
-                    </a>
-                    <a class="navbar-item" href="../cuenta/mispedidos.html">
-                        Mis Pedidos
-                    </a>
-
-                     <a class="navbar-item" href="../cuenta/cuenta.html">
-                    Cuenta
-                    </a>
-
-                </div>
-
-            </div>
-
+          <a
+            role="button"
+            class="navbar-burger"
+            id="burger"
+            aria-label="menu"
+            aria-expanded="false"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
         </div>
 
+        <div class="navbar-menu" id="menu">
+          <div class="navbar-end">
+            <a class="navbar-item" href="../inicio/index.html">Inicio</a>
+            <a class="navbar-item" href="../catalogo/catalogo.html">Catálogo</a>
+            <a class="navbar-item" href="favoritos.html">Favoritos</a>
+            <a class="navbar-item" href="mispedidos.html">Mis pedidos</a>
+            <a class="navbar-item" href="cuenta.php">Cuenta</a>
+          </div>
+        </div>
+      </div>
     </nav>
 
-
     <section class="section">
-
-        <div class="container">
-
-            <div class="has-text-centered mb-6">
-
-                <h1 class="title is-1">
-                    Mis favoritos
-                </h1>
-
-                <p class="subtitle">
-                    Productos que has guardado
-                </p>
-
-            </div>
-
-
-            <div
-                id="favoritos"
-                class="columns is-multiline"
-            >
-            </div>
-
-
-            <div
-                id="vacio"
-                class="has-text-centered"
-            >
-
-                <h2 class="title is-3">
-                    No tienes favoritos
-                </h2>
-
-                <p>
-                    Agrega productos a favoritos desde nuestro catálogo.
-                </p>
-
-                <a
-                    href="../catalogo/catalogo.html"
-                    class="button mt-5"
-                >
-                    Ir al catálogo
-                </a>
-
-            </div>
-
+      <div class="container">
+        <div class="has-text-centered mb-6">
+          <h1 class="title is-1">Favoritos</h1>
+          <p class="subtitle">Los productos que te gustaron</p>
         </div>
 
+        <div class="columns is-multiline" id="listaFavoritos"></div>
+      </div>
     </section>
 
+    <script>
+      const burger = document.getElementById("burger");
+      const menu = document.getElementById("menu");
+      const lista = document.getElementById("listaFavoritos");
 
+      burger.addEventListener("click", () => {
+        burger.classList.toggle("is-active");
+        menu.classList.toggle("is-active");
+      });
 
-</body>
+      function obtenerFavoritos() {
+        try {
+          return JSON.parse(localStorage.getItem("favoritos")) || [];
+        } catch {
+          return [];
+        }
+      }
 
+      function formatoPrecio(valor) {
+        return "$" + Number(valor).toLocaleString("es-CO");
+      }
+
+      function abrirProducto(enlace) {
+        window.location.href = enlace;
+      }
+
+      function quitarFavorito(event, id) {
+        event.stopPropagation();
+
+        const favoritos = obtenerFavoritos().filter((p) => p.id !== id);
+        localStorage.setItem("favoritos", JSON.stringify(favoritos));
+        mostrarFavoritos();
+      }
+
+      function mostrarFavoritos() {
+        const favoritos = obtenerFavoritos();
+
+        if (favoritos.length === 0) {
+          lista.innerHTML =
+            '<div class="column"><p class="subtitle has-text-centered">Aún no tienes productos favoritos.</p></div>';
+          return;
+        }
+
+        lista.innerHTML = favoritos
+          .map(
+            (p) => `
+              <div class="column is-4">
+                <div class="card producto-card" onclick="abrirProducto('${p.enlace}')">
+                  <div class="card-image">
+                    <figure class="image is-4by5">
+                      <img src="${p.imagen}" alt="${p.nombre}" />
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="producto-encabezado">
+                      <h2 class="producto-nombre">${p.nombre}</h2>
+                      <button
+                        class="boton-corazon activo"
+                        aria-label="Quitar de favoritos"
+                        onclick="quitarFavorito(event, '${p.id}')"
+                      >
+                        <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg>
+                      </button>
+                    </div>
+                    <p class="producto-descripcion">${formatoPrecio(p.precio)}</p>
+                  </div>
+                </div>
+              </div>
+            `,
+          )
+          .join("");
+      }
+
+      mostrarFavoritos();
+    </script>
+  </body>
 </html>

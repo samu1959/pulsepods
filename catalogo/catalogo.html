@@ -15,9 +15,7 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item logo" href="../inicio/index.html">
-            PULSEPODS
-          </a>
+          <a class="navbar-item logo" href="../inicio/index.html">PULSEPODS</a>
 
           <a
             role="button"
@@ -44,7 +42,6 @@
                   placeholder="Buscar productos..."
                 />
               </div>
-
               <div class="control">
                 <button class="button boton-busqueda">Buscar</button>
               </div>
@@ -52,19 +49,11 @@
           </div>
 
           <div class="navbar-end">
-            <a class="navbar-item" href="../inicio/index.html"> Inicio </a>
-
-            <a class="navbar-item" href="catalogo.html"> Catálogo </a>
-
-            <a class="navbar-item" href="../cuenta/favoritos.html">
-              Favoritos
-            </a>
-
-            <a class="navbar-item" href="../cuenta/mispedidos.html">
-              Mis pedidos
-            </a>
-
-            <a class="navbar-item" href="../cuenta/cuenta.html"> Cuenta </a>
+            <a class="navbar-item" href="../inicio/index.html">Inicio</a>
+            <a class="navbar-item" href="catalogo.html">Catálogo</a>
+            <a class="navbar-item" href="../cuenta/favoritos.html">Favoritos</a>
+            <a class="navbar-item" href="../cuenta/mispedidos.html">Mis pedidos</a>
+            <a class="navbar-item" href="../cuenta/cuenta.php">Cuenta</a>
           </div>
         </div>
       </div>
@@ -74,192 +63,209 @@
       <div class="container">
         <div class="has-text-centered mb-6">
           <h1 class="title is-1">Productos</h1>
-
           <p class="subtitle">Encuentra tus PulsePods favoritos</p>
         </div>
 
         <div class="columns is-multiline">
           <div class="column is-4">
-            <div class="card producto-card" onclick="abrirProducto()">
+            <div
+              class="card producto-card"
+              data-id="pulsepods-1"
+              data-nombre="Cargador PulsePods"
+              data-precio="39900"
+              data-imagen="../img/cargador.png"
+              onclick="abrirProducto()"
+            >
               <div class="card-image">
                 <figure class="image is-4by5">
-                  <img src="../img/cargador.png" alt="PulsePods 1" />
+                  <img src="../img/cargador.png" alt="Cargador PulsePods" />
                 </figure>
               </div>
-
               <div class="card-content">
                 <div class="producto-encabezado">
-                  <h2 class="producto-nombre">PulsePods 1</h2>
-
-                  
+                  <h2 class="producto-nombre">Cargador PulsePods</h2>
                   <button
-                    type="submit"
                     class="boton-corazon"
                     aria-label="Agregar a favoritos"
                     onclick="favorito(event, this)"
                   >
-                    ♥
+                    <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>
                   </button>
-                 
                 </div>
-
                 <p class="producto-descripcion">
-                  Audífonos inalámbricos PulsePods.
+                  Cargador rápido USB-C para tus audífonos.
                 </p>
               </div>
             </div>
           </div>
 
           <div class="column is-4">
-            <div class="card producto-card" onclick="abrirProducto()">
+            <div
+              class="card producto-card"
+              data-id="pulsepods-2"
+              data-nombre="Corn HB100 Deportivos"
+              data-precio="129900"
+              data-imagen="../img/corn.png"
+              onclick="abrirProducto()"
+            >
               <div class="card-image">
                 <figure class="image is-4by5">
-                  <img src="../img/corn.png" alt="PulsePods 2" />
+                  <img src="../img/corn.png" alt="Corn HB100 Deportivos" />
                 </figure>
               </div>
-
               <div class="card-content">
                 <div class="producto-encabezado">
-                  <h2 class="producto-nombre">PulsePods 2</h2>
-
-                  
+                  <h2 class="producto-nombre">Corn HB100 Deportivos</h2>
                   <button
-                    type="submit"
                     class="boton-corazon"
                     aria-label="Agregar a favoritos"
                     onclick="favorito(event, this)"
                   >
-                    ♥
+                    <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>
                   </button>
-                 
                 </div>
-
                 <p class="producto-descripcion">
-                  Audífonos inalámbricos PulsePods.
+                  Audífonos deportivos de conducción de aire.
                 </p>
               </div>
             </div>
           </div>
 
           <div class="column is-4">
-            <div class="card producto-card" onclick="abrirProducto()">
+            <div
+              class="card producto-card"
+              data-id="pulsepods-3"
+              data-nombre="Power Bank PulsePods"
+              data-precio="89900"
+              data-imagen="../img/powerbank.png"
+              onclick="abrirProducto()"
+            >
               <div class="card-image">
                 <figure class="image is-4by5">
-                  <img src="../img/powerbank.png" alt="PulsePods 3" />
+                  <img src="../img/powerbank.png" alt="Power Bank PulsePods" />
                 </figure>
               </div>
-
               <div class="card-content">
                 <div class="producto-encabezado">
-                  <h2 class="producto-nombre">PulsePods 3</h2>
-
-                  
+                  <h2 class="producto-nombre">Power Bank PulsePods</h2>
                   <button
-                    type="submit"
                     class="boton-corazon"
                     aria-label="Agregar a favoritos"
                     onclick="favorito(event, this)"
                   >
-                    ♥
+                    <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>
                   </button>
-                 
                 </div>
-
                 <p class="producto-descripcion">
-                  Audífonos inalámbricos PulsePods.
+                  Batería portátil de 10.000 mAh.
                 </p>
               </div>
             </div>
           </div>
 
           <div class="column is-4">
-            <div class="card producto-card" onclick="abrirProducto()">
+            <div
+              class="card producto-card"
+              data-id="pulsepods-4"
+              data-nombre="Pack Audífonos Colores"
+              data-precio="159900"
+              data-imagen="../img/airpodsvarios.png"
+              onclick="abrirProducto()"
+            >
               <div class="card-image">
                 <figure class="image is-4by5">
-                  <img src="../img/airpodsvarios.png" alt="PulsePods 4" />
+                  <img src="../img/airpodsvarios.png" alt="Pack Audífonos Colores" />
                 </figure>
               </div>
-
               <div class="card-content">
                 <div class="producto-encabezado">
-                  <h2 class="producto-nombre">PulsePods 4</h2>
-
-                  
+                  <h2 class="producto-nombre">Pack Audífonos Colores</h2>
                   <button
-                    type="submit"
                     class="boton-corazon"
                     aria-label="Agregar a favoritos"
                     onclick="favorito(event, this)"
                   >
-                    ♥
+                    <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>
                   </button>
-                 
                 </div>
-
                 <p class="producto-descripcion">
-                  Audífonos inalámbricos PulsePods.
+                  Audífonos inalámbricos en varios colores.
                 </p>
               </div>
             </div>
           </div>
 
           <div class="column is-4">
-            <div class="card producto-card" onclick="abrirProducto()">
+            <div
+              class="card producto-card"
+              data-id="pulsepods-5"
+              data-nombre="PulsePods con Estuche"
+              data-precio="99900"
+              data-imagen="../img/airpodscaja.png"
+              onclick="abrirProducto()"
+            >
               <div class="card-image">
                 <figure class="image is-4by5">
-                  <img src="../img/airpodscaja.png" alt="PulsePods 5" />
+                  <img src="../img/airpodscaja.png" alt="PulsePods con Estuche" />
                 </figure>
               </div>
-
               <div class="card-content">
                 <div class="producto-encabezado">
-                  <h2 class="producto-nombre">PulsePods 5</h2>
-
-                  
+                  <h2 class="producto-nombre">PulsePods con Estuche</h2>
                   <button
-                    type="submit"
                     class="boton-corazon"
                     aria-label="Agregar a favoritos"
                     onclick="favorito(event, this)"
                   >
-                    ♥
+                    <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>
                   </button>
-                 
                 </div>
-
                 <p class="producto-descripcion">
-                  Audífonos inalámbricos PulsePods.
+                  Audífonos con estuche de carga incluido.
                 </p>
               </div>
             </div>
           </div>
 
           <div class="column is-4">
-            <div class="card producto-card" onclick="abrirProducto()">
+            <div
+              class="card producto-card"
+              data-id="airpods-pro-3"
+              data-nombre="AirPods Pro 3"
+              data-precio="84900"
+              data-imagen="../img/airpodspro3.png"
+              onclick="abrirProducto()"
+            >
               <div class="card-image">
                 <figure class="image is-4by5">
-                  <img src="../img/airpodspro3.png" alt="PulsePods 6" />
+                  <img src="../img/airpodspro3.png" alt="AirPods Pro 3" />
                 </figure>
               </div>
-
               <div class="card-content">
                 <div class="producto-encabezado">
-                  <h2 class="producto-nombre">PulsePods 6</h2>
-
-                  
+                  <h2 class="producto-nombre">AirPods Pro 3</h2>
                   <button
-                    type="submit"
                     class="boton-corazon"
                     aria-label="Agregar a favoritos"
                     onclick="favorito(event, this)"
                   >
-                    ♥
+                    <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>
                   </button>
-                 
                 </div>
-
                 <p class="producto-descripcion">
-                  Audífonos inalámbricos PulsePods.
+                  Audífonos inalámbricos con excelente sonido.
                 </p>
               </div>
             </div>
@@ -281,10 +287,56 @@
         window.location.href = "producto.html";
       }
 
+      function obtenerFavoritos() {
+        try {
+          return JSON.parse(localStorage.getItem("favoritos")) || [];
+        } catch {
+          return [];
+        }
+      }
+
       function favorito(event, boton) {
         event.stopPropagation();
-        boton.classList.toggle("activo");
+
+        const card = boton.closest(".producto-card");
+
+        const producto = {
+          id: card.dataset.id,
+          nombre: card.dataset.nombre,
+          precio: Number(card.dataset.precio),
+          imagen: card.dataset.imagen,
+          enlace: new URL("producto.html", window.location.href).href,
+        };
+
+        const favoritos = obtenerFavoritos();
+        const posicion = favoritos.findIndex((p) => p.id === producto.id);
+
+        if (posicion !== -1) {
+          favoritos.splice(posicion, 1);
+        } else {
+          favoritos.push(producto);
+        }
+
+        localStorage.setItem("favoritos", JSON.stringify(favoritos));
+        pintarCorazones();
       }
+
+      function pintarCorazones() {
+        const favoritos = obtenerFavoritos();
+
+        document.querySelectorAll(".producto-card").forEach((card) => {
+          const guardado = favoritos.some((p) => p.id === card.dataset.id);
+          const boton = card.querySelector(".boton-corazon");
+
+          boton.classList.toggle("activo", guardado);
+          boton.setAttribute(
+            "aria-label",
+            guardado ? "Quitar de favoritos" : "Agregar a favoritos"
+          );
+        });
+      }
+
+      pintarCorazones();
     </script>
   </body>
 </html>

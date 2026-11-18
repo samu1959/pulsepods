@@ -93,7 +93,7 @@
 
                 <form
                     class="box producto-formulario"
-                    id="formProducto"
+                    id="formProducto" action="../php/agregarproducto.php"  method="POST"
                 >
 
                     <div class="field">
@@ -186,6 +186,7 @@
 
                             <textarea
                                 id="descripcion"
+                                name="descripcion"
                                 class="textarea"
                                 placeholder="Descripción del producto"
                                 required
@@ -232,7 +233,7 @@
 
                             <div class="select is-fullwidth">
 
-                                <select id="categoria">
+                                <select id="categoria" name="categoria">
 
                                     <option value="audifonos">
                                         Audífonos
@@ -265,7 +266,7 @@
 
                             <div class="select is-fullwidth">
 
-                                <select id="estado">
+                                <select id="estado" name="estado">
 
                                     <option value="disponible">
                                         Disponible
@@ -321,8 +322,6 @@
     </div>
 
 </section>
-
-<script src="../js/agregar-producto.js"></script>
 
 </body>
 </html>

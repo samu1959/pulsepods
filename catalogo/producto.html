@@ -16,7 +16,7 @@
       <div class="container">
         <div class="navbar-brand">
           <a class="navbar-item" href="../inicio/index.html">
-            <strong class="is-size-4"> PULSEPODS </strong>
+            <strong class="is-size-4">PULSEPODS</strong>
           </a>
 
           <a
@@ -34,19 +34,11 @@
 
         <div id="menuPrincipal" class="navbar-menu">
           <div class="navbar-end">
-            <a class="navbar-item" href="../inicio/index.html"> Inicio </a>
-
-            <a class="navbar-item" href="catalogo.html"> Catálogo </a>
-
-            <a class="navbar-item" href="../cuenta/favoritos.html">
-              Favoritos
-            </a>
-
-            <a class="navbar-item" href="../cuenta/mispedidos.html">
-              Mis Pedidos
-            </a>
-
-            <a class="navbar-item" href="../cuenta/cuenta.html"> Cuenta </a>
+            <a class="navbar-item" href="../inicio/index.html">Inicio</a>
+            <a class="navbar-item" href="catalogo.html">Catálogo</a>
+            <a class="navbar-item" href="../cuenta/favoritos.html">Favoritos</a>
+            <a class="navbar-item" href="../cuenta/mispedidos.html">Mis Pedidos</a>
+            <a class="navbar-item" href="../cuenta/cuenta.php">Cuenta</a>
           </div>
         </div>
       </div>
@@ -96,9 +88,8 @@
                 </div>
 
                 <div class="notification is-light mb-5">
-                  <strong> Disponibilidad: </strong>
-
-                  <span id="stock"> 15 unidades </span>
+                  <strong>Disponibilidad:</strong>
+                  <span id="stock">15 unidades</span>
                 </div>
 
                 <div class="cantidad-favorito">
@@ -106,7 +97,7 @@
                     <p class="cantidad-titulo">Cantidad</p>
 
                     <div class="buttons has-addons">
-                      <button class="button cantidad-boton" onclick="restar()">
+                      <button class="button cantidad-boton" type="button" onclick="restar()">
                         −
                       </button>
 
@@ -119,7 +110,7 @@
                         readonly
                       />
 
-                      <button class="button cantidad-boton" onclick="sumar()">
+                      <button class="button cantidad-boton" type="button" onclick="sumar()">
                         +
                       </button>
                     </div>
@@ -132,7 +123,9 @@
                     aria-label="Agregar a favoritos"
                     onclick="guardarFavorito()"
                   >
-                    ♥
+                    <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>
                   </button>
                 </div>
 
@@ -177,6 +170,8 @@
     <script>
       const burger = document.querySelector(".navbar-burger");
       const menu = document.querySelector("#menuPrincipal");
+      const campoNumero = document.getElementById("numero");
+      const stockDisponible = 15;
 
       burger.addEventListener("click", () => {
         burger.classList.toggle("is-active");
@@ -187,9 +182,52 @@
         id: "airpods-pro-3",
         nombre: "AirPods Pro 3",
         precio: 84900,
-        imagen: "",
-        enlace: "producto.html",
+        imagen: "../img/airpodspro3.png",
+        enlace: window.location.href,
       };
+
+      function sumar() {
+        const cantidad = Number(campoNumero.value);
+        if (cantidad < stockDisponible) {
+          campoNumero.value = cantidad + 1;
+        }
+      }
+
+      function restar() {
+        const cantidad = Number(campoNumero.value);
+        if (cantidad > 1) {
+          campoNumero.value = cantidad - 1;
+        }
+      }
+
+      function obtenerPedidos() {
+        try {
+          return JSON.parse(localStorage.getItem("pedidos")) || [];
+        } catch {
+          return [];
+        }
+      }
+
+      function pedir() {
+        const cantidad = Number(campoNumero.value);
+        const pedidos = obtenerPedidos();
+        const existente = pedidos.find((p) => p.id === productoActual.id);
+
+        if (existente) {
+          existente.cantidad += cantidad;
+        } else {
+          pedidos.push({
+            id: productoActual.id,
+            nombre: productoActual.nombre,
+            precio: productoActual.precio,
+            imagen: productoActual.imagen,
+            cantidad: cantidad,
+          });
+        }
+
+        localStorage.setItem("pedidos", JSON.stringify(pedidos));
+        window.location.href = "../cuenta/mispedidos.html";
+      }
 
       function obtenerFavoritos() {
         try {
@@ -201,17 +239,11 @@
 
       function comprobarFavorito() {
         const favoritos = obtenerFavoritos();
-
-        const guardado = favoritos.some(
-          (producto) => producto.id === productoActual.id,
-        );
-
+        const guardado = favoritos.some((p) => p.id === productoActual.id);
         const boton = document.getElementById("favorito");
 
         boton.classList.toggle("activo", guardado);
-
         boton.setAttribute("aria-pressed", guardado);
-
         boton.setAttribute(
           "aria-label",
           guardado ? "Quitar de favoritos" : "Agregar a favoritos",
@@ -219,11 +251,8 @@
       }
 
       function guardarFavorito() {
-        let favoritos = obtenerFavoritos();
-
-        const indice = favoritos.findIndex(
-          (producto) => producto.id === productoActual.id,
-        );
+        const favoritos = obtenerFavoritos();
+        const indice = favoritos.findIndex((p) => p.id === productoActual.id);
 
         if (indice !== -1) {
           favoritos.splice(indice, 1);
@@ -232,7 +261,6 @@
         }
 
         localStorage.setItem("favoritos", JSON.stringify(favoritos));
-
         comprobarFavorito();
       }
 

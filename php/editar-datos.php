@@ -1,5 +1,6 @@
 <?php
 require("conexion.php");
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST["nombre"];
@@ -9,16 +10,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $metodoEntrega = $_POST["metodoEntrega"];
     $documento = $_POST["documento"];
     $direccion = $_POST["direccion"];
+    $_SESSION['usuario'] = $correo; // Guardar el correo en la variable de sesión
 
-
-    SELECT * FROM `usuario` WHERE 1;
+    // SELECT * FROM `usuario` WHERE 1;
     
-UPDATE 'usuario'  SET  `nombre`='$nombre' ,  `correo`='$correo', `metodoEntrega`='metodoEntrega' , `direccion` = '$direccion' WHERE  id_usuario = 1;    if ($conn->query($sql) === TRUE) {
+    $sql = "UPDATE usuario  SET  nombre='$nombre' ,  correo='$correo', metodoEntrega='$metodoEntrega' , direccion = '$direccion' 
+    WHERE  id_usuario = ' $_SESSION['usuario']' ";       
+
+    if ($conn->query($sql) === TRUE) {
         echo "datos  actualizados exitosamente.";
         header("Location: ../login_registro/login.html");
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 }
-$conn->close();     
+
+$conn->close();  
+
 ?>

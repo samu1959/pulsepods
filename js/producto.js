@@ -1,97 +1,98 @@
-const parametros = new URLSearchParams(window.location.search);
-let id = Number(parametros.get("id"));
-if (id === 0) {
-    id = 1;
-}
 
-const producto = buscarProducto(id);
-let cantidad = 1;
+  const burger = document.querySelector(".navbar-burger");
+  const menu = document.querySelector("#menuPrincipal");
+  const campoNumero = document.getElementById("numero");
+  const stockDisponible = 15;
 
-function pintarFavorito() {
-    const corazon = document.getElementById("favorito");
-    if (esFavorito(id)) {
-        corazon.classList.add("activo");
-    } else {
-        corazon.classList.remove("activo");
+  burger.addEventListener("click", () => {
+    burger.classList.toggle("is-active");
+    menu.classList.toggle("is-active");
+  });
+
+  const productoActual = {
+    id: "airpods-pro-3",
+    nombre: "AirPods Pro 3",
+    precio: 84900,
+    imagen: "../img/airpodspro3.png",
+    enlace: window.location.href,
+  };
+
+  function sumar() {
+    const cantidad = Number(campoNumero.value);
+    if (cantidad < stockDisponible) {
+      campoNumero.value = cantidad + 1;
     }
-}
+  }
 
-function sumar() {
-    if (cantidad < producto.stock) {
-        cantidad = cantidad + 1;
-        document.getElementById("numero").value = cantidad;
-    }
-}
-
-function restar() {
+  function restar() {
+    const cantidad = Number(campoNumero.value);
     if (cantidad > 1) {
-        cantidad = cantidad - 1;
-        document.getElementById("numero").value = cantidad;
+      campoNumero.value = cantidad - 1;
     }
-}
+  }
 
-function guardarFavorito() {
-    cambiarFavorito(id);
-    pintarFavorito();
-}
-
-function pedir() {
-    if (usuarioActual() === null) {
-        alert("Inicia sesión para agregar pedidos");
-        window.location.href = "../login/login.html";
-        return;
+  function obtenerPedidos() {
+    try {
+      return JSON.parse(localStorage.getItem("pedidos")) || [];
+    } catch {
+      return [];
     }
+  }
 
-    if (producto.estado === "agotado" || producto.stock < 1) {
-        alert("Este producto está agotado");
-        return;
-    }
+  function pedir() {
+    const cantidad = Number(campoNumero.value);
+    const pedidos = obtenerPedidos();
+    const existente = pedidos.find((p) => p.id === productoActual.id);
 
-    const carrito = leer("carrito", []);
-    let yaEstaba = false;
-
-    for (let i = 0; i < carrito.length; i++) {
-        if (carrito[i].id === producto.id) {
-            carrito[i].cantidad = carrito[i].cantidad + cantidad;
-            yaEstaba = true;
-        }
-    }
-
-    if (yaEstaba === false) {
-        carrito.push({
-            id: producto.id,
-            nombre: producto.nombre,
-            precio: producto.precio,
-            imagen: producto.imagen,
-            cantidad: cantidad
-        });
-    }
-
-    guardar("carrito", carrito);
-    window.location.href = "../cuenta/mispedidos.html";
-}
-
-if (producto === null) {
-    window.location.href = "catalogo.html";
-} else {
-    document.title = "PulsePods - " + producto.nombre;
-    document.getElementById("categoria").textContent = producto.categoria.toUpperCase();
-    document.getElementById("nombre").textContent = producto.nombre;
-    document.getElementById("precio").textContent = dinero(producto.precio);
-    document.getElementById("descripcion").textContent = producto.descripcion;
-
-    if (producto.estado === "agotado" || producto.stock < 1) {
-        document.getElementById("stock").textContent = "Agotado";
+    if (existente) {
+      existente.cantidad += cantidad;
     } else {
-        document.getElementById("stock").textContent = producto.stock + " unidades";
+      pedidos.push({
+        id: productoActual.id,
+        nombre: productoActual.nombre,
+        precio: productoActual.precio,
+        imagen: productoActual.imagen,
+        cantidad: cantidad,
+      });
     }
 
-    if (producto.modelo === false) {
-        document.getElementById("modelo3d").style.display = "none";
-        const imagen = document.getElementById("imagenProducto");
-        imagen.src = producto.imagen;
-        imagen.style.display = "block";
+    localStorage.setItem("pedidos", JSON.stringify(pedidos));
+    window.location.href = "../cuenta/mispedidos.html";
+  }
+
+  function obtenerFavoritos() {
+    try {
+      return JSON.parse(localStorage.getItem("favoritos")) || [];
+    } catch {
+      return [];
+    }
+  }
+
+  function comprobarFavorito() {
+    const favoritos = obtenerFavoritos();
+    const guardado = favoritos.some((p) => p.id === productoActual.id);
+    const boton = document.getElementById("favorito");
+
+    boton.classList.toggle("activo", guardado);
+    boton.setAttribute("aria-pressed", guardado);
+    boton.setAttribute(
+      "aria-label",
+      guardado ? "Quitar de favoritos" : "Agregar a favoritos",
+    );
+  }
+
+  function guardarFavorito() {
+    const favoritos = obtenerFavoritos();
+    const indice = favoritos.findIndex((p) => p.id === productoActual.id);
+
+    if (indice !== -1) {
+      favoritos.splice(indice, 1);
+    } else {
+      favoritos.push(productoActual);
     }
 
-    pintarFavorito();
-}
+    localStorage.setItem("favoritos", JSON.stringify(favoritos));
+    comprobarFavorito();
+  }
+
+  comprobarFavorito();

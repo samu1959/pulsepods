@@ -1,0 +1,139 @@
+<?php
+session_start();
+
+$logueado = isset($_SESSION["id_usuario"]);
+$nombre   = $logueado ? htmlspecialchars($_SESSION["nombre"] ?? "", ENT_QUOTES, "UTF-8") : "";
+$correo   = $logueado ? htmlspecialchars($_SESSION["correo"] ?? "", ENT_QUOTES, "UTF-8") : "";
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../css/cuenta.css">
+    <title>PulsePods - Mi cuenta</title>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item logo" href="../index.html">PULSEPODS</a>
+
+            <a role="button" class="navbar-burger" id="burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div class="navbar-menu" id="menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="../inicio/index.html">Inicio</a>
+                <a class="navbar-item" href="../catalogo/catalogo.html">Catálogo</a>
+                <a class="navbar-item" href="favoritos.php">Favoritos</a>
+                <a class="navbar-item" href="mispedidos.php">Mis pedidos</a>
+                <a class="navbar-item is-active" href="cuenta.php">Cuenta</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<section class="section">
+    <div class="container">
+
+        <div class="has-text-centered mb-6">
+            <h1 class="title is-1">Mi cuenta</h1>
+            <p class="subtitulo">Administra tu cuenta y tus preferencias</p>
+        </div>
+
+        <div class="columns is-variable is-6 <?= $logueado ? '' : 'is-centered' ?>">
+
+            <!-- Columna de acceso / perfil -->
+            <div class="column is-5">
+                <div class="box cuenta-acceso">
+
+                    <div class="perfil-icono">
+                        <span>👤</span>
+                    </div>
+
+                    <?php if ($logueado): ?>
+
+                        <h2 class="title is-3">Hola, <?= $nombre ?></h2>
+                        <p class="mensaje-cuenta"><?= $correo ?></p>
+
+                        <div class="botones-cuenta">
+                            <a href="logout.php" class="button boton-secundario">Cerrar sesión</a>
+                        </div>
+
+                    <?php else: ?>
+
+                        <h2 class="title is-3">Tu cuenta</h2>
+                        <p class="mensaje-cuenta">
+                            Inicia sesión o regístrate para ver tus datos,
+                            administrar tus pedidos y acceder a todas las
+                            funciones de tu cuenta.
+                        </p>
+
+                        <div class="botones-cuenta">
+                            <a href="../login_register/login.html" class="button boton-principal">Iniciar sesión</a>
+                            <a href="../login_register/registro.html" class="button boton-secundario">Registrarse</a>
+                        </div>
+
+                    <?php endif; ?>
+
+                </div>
+            </div>
+
+            <!-- Ajustes: solo para usuarios con sesión iniciada -->
+            <?php if ($logueado): ?>
+            <div class="column is-7">
+                <div class="box ajustes">
+
+                    <h2 class="title is-3">Ajustes de cuenta</h2>
+
+                    <div class="ajuste">
+                        <div>
+                            <h3>Datos personales</h3>
+                            <p>Consulta y modifica tus datos personales.</p>
+                        </div>
+                        <a href="datos.php" class="button boton-ajuste">Ver datos</a>
+                    </div>
+
+                    <div class="ajuste">
+                        <div>
+                            <h3>Mis pedidos</h3>
+                            <p>Consulta los productos que has agregado a tus pedidos.</p>
+                        </div>
+                        <a href="mispedidos.php" class="button boton-ajuste">Ver pedidos</a>
+                    </div>
+
+                    <div class="ajuste">
+                        <div>
+                            <h3>Mis favoritos</h3>
+                            <p>Consulta los productos que has guardado.</p>
+                        </div>
+                        <a href="favoritos.php" class="button boton-ajuste">Ver favoritos</a>
+                    </div>
+
+                    <div class="ajuste">
+                        <div>
+                            <h3>Notificaciones</h3>
+                            <p>Configura las notificaciones de tu cuenta.</p>
+                        </div>
+                        <a href="notificaciones.php" class="button boton-ajuste">Configurar</a>
+                    </div>
+
+                </div>
+            </div>
+            <?php endif; ?>
+
+        </div>
+    </div>
+</section>
+
+<script src="../js/cuenta.js"></script>
+
+</body>
+</html>
